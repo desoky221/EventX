@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventX - Discover Premier Campus Events</title>
+  <meta name="description"
+    content="Join EventX for top-tier workshops, seminars, and networking events. Elevate your skills and career.">
+  <!-- Using common.css as requested -->
+  <link rel="stylesheet" href="pages/css/common.css">
+  <link rel="stylesheet" href="pages/css/index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+
+<body id="homePage">
+
+  <!-- ========== HEADER SECTION (LEGACY STRUCTURE) ========== -->
+  <header id="siteHeader" class="header">
+    <div id="brandSection" class="brand">
+      <a href="index.html" id="homeLink" class="logoLink" title="Go to EventsX Home">
+        <img src="pages/images/1png.png" alt="EventsX logo" id="logoImage" class="logoImg">
+      </a>
+      <h1 id="siteTitle" class="titleText">EventsX</h1>
+    </div>
+
+    <nav id="mainNavigation" class="navBar" aria-label="Primary">
+      <ul id="navList" class="navList">
+        <li class="navItem"><a href="index.html" id="navHome" class="navLink active" title="Home">Home</a></li>
+        <li class="navItem"><a href="pages/about.html" id="navAbout" class="navLink" title="About EduConnect">About Us</a>
+        </li>
+        <li class="navItem"><a href="pages/events.html" id="navCourses" class="navLink" title="Browse course catalog">Course
+            Catalog</a></li>
+        <li class="navItem"><a href="pages/student-dashboard.html" id="navDashboard" class="navLink active"
+            title="Open student dashboard">Student Dashboard</a></li>
+        <li class="navItem"><a href="pages/registration.html" id="navRegister" class="navLink"
+            title="Register for an event">Registration</a></li>
+        <li class="navItem"><a href="pages/contact.html" id="navContact" class="navLink" title="Contact us">Contact Me</a>
+        </li>
+        <li class="navItem">
+          <a href="https://www.gu.edu.eg/" id="GalalaUniversityLink" class="navLink" target="_blank"
+            rel="noopener noreferrer" title="Visit University Website">Galala University</a>
+        </li>
+      </ul>
+      <!-- Profile Dropdown -->
+      <div id="profileContainer" class="profile-container" data-hidden="true">
+        <div class="profile-icon" title="Profile Menu"></div>
+        <div class="profile-dropdown">
+          <button type="button" class="profile-dropdown-item" data-action="switch">Sign Out</button>
+          <div class="profile-dropdown-divider"></div>
+          <button type="button" class="profile-dropdown-item" data-action="profile">Profile</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- ========== END HEADER ========= -->
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h2 class="hero-title">
+        Shape Your Future with <br>
+        <span class="text-gradient">EventX Workshops</span>
+      </h2>
+      <p class="hero-subtitle">
+        Connect, learn, and grow with industry-leading seminars and hands-on technical sprints designed for students.
+      </p>
+      <div class="hero-actions">
+        <a href="pages/events.html" class="btn btn-primary">Browse Events</a>
+        <a href="pages/login.html" id="heroSignInLink" class="btn btn-outline">Sign In</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="mainContent" class="main-wrapper">
+    <div class="dashboard-grid"> <!-- Using grid layout -->
+
+      <!-- LEFT COLUMN: Featured Events -->
+      <section class="events-feed">
+        <div class="section-header">
+          <h2>Featured Workshops</h2>
+          <a href="pages/events.html" class="view-all">View All &rarr;</a>
+        </div>
+
+        <div class="cards-grid">
+          <!-- Event Card 1 -->
+          <article class="event-card">
+            <div class="card-media">
+              <img src="pages/images/study1.jpeg" alt="Students coding">
+              <div class="card-badge">Tech</div>
+            </div>
+            <div class="card-body">
+              <p class="card-date"><time datetime="2026-01-10">January 10, 2026</time></p>
+              <h3 class="card-title">Full-Stack Dev Sprint</h3>
+              <p class="card-desc">Master responsive web apps in this intensive weekend sprint.</p>
+              <a href="pages/events.html" class="btn-text">Details &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Event Card 2 -->
+          <article class="event-card">
+            <div class="card-media">
+              <img src="pages/images/machine%20learning.jpg" alt="AI Workshop">
+              <div class="card-badge">AI &amp; ML</div>
+            </div>
+            <div class="card-body">
+              <p class="card-date"><time datetime="2026-03-15">March 15, 2026</time></p>
+              <h3 class="card-title">Machine Learning Basics</h3>
+              <p class="card-desc">Build intelligent systems with Python. Notebooks provided.</p>
+              <a href="pages/events.html" class="btn-text">Details &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Event Card 3 -->
+          <article class="event-card">
+            <div class="card-media">
+              <img src="pages/images/data%20analysis.jpg" alt="Data Analysis">
+              <div class="card-badge">Data</div>
+            </div>
+            <div class="card-body">
+              <p class="card-date"><time datetime="2026-04-20">April 20, 2026</time></p>
+              <h3 class="card-title">Data Analytics Pro</h3>
+              <p class="card-desc">Visualize insights using Tableau and Python libraries.</p>
+              <a href="pages/events.html" class="btn-text">Details &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Event Card 4 -->
+          <article class="event-card">
+            <div class="card-media">
+              <img src="pages/images/security.jpg" alt="Cybersecurity Workshop">
+              <div class="card-badge">Security</div>
+            </div>
+            <div class="card-body">
+              <p class="card-date"><time datetime="2026-05-15">May 15, 2026</time></p>
+              <h3 class="card-title">Cybersecurity Essentials</h3>
+              <p class="card-desc">Learn to protect systems and networks from threats.</p>
+              <a href="pages/events.html" class="btn-text">Details &rarr;</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Featured Wide Card -->
+        <article class="feature-highlight">
+          <div class="highlight-content">
+            <h3>Career Prep Seminar</h3>
+            <p>Get ready for interview season with expert CV reviews.</p>
+            <a href="pages/events.html" class="btn btn-secondary">Learn More</a>
+          </div>
+          <div class="highlight-media">
+            <video src="pages/videos/video.mp4" controls></video>
+          </div>
+        </article>
+      </section>
+
+      <!-- RIGHT COLUMN: Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-widget filter-widget">
+          <h3>Find Your Event</h3>
+          <form action="pages/events.html" class="filter-form">
+            <div class="form-group">
+              <label>Keyword</label>
+              <input type="text" placeholder="e.g. Python">
+            </div>
+            <div class="form-group">
+              <label>Category</label>
+              <select>
+                <option>All Categories</option>
+                <option>Workshop</option>
+                <option>Seminar</option>
+                <option>Networking</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Search</button>
+          </form>
+        </div>
+
+        <div class="sidebar-widget quick-links">
+          <h3>Quick Access</h3>
+          <ul class="link-list">
+            <li><a href="pages/about.html">ℹ️ About Us</a></li>
+            <li><a href="pages/contact.html">📞 Contact Support</a></li>
+            <li id="sidebarSignInItem"><a href="pages/login.html">🔐 Sign In</a></li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- ========== FOOTER SECTION (LEGACY STRUCTURE) ========== -->
+  <footer id="siteFooter" class="footer">
+    <div id="footerContent" class="footerContent">
+      <section id="footerLinksSection" class="footerSection">
+        <h4 id="footerLinksTitle" class="footerTitle">Links</h4>
+        <ul id="footerLinksList" class="footerList">
+          <li><a href="pages/about.html" class="footerLink" title="About EduConnect">About Us</a></li>
+          <li><a href="pages/contact.html" class="footerLink" title="Contact page">Contact</a></li>
+          <li><a href="pages/privacy.html" class="footerLink" title="Privacy policy placeholder">Privacy Policy</a></li>
+          <li><a href="pages/terms.html" class="footerLink" title="Terms of service placeholder">Terms of Service</a>
+          </li>
+        </ul>
+      </section>
+
+      <section id="footerContactSection" class="footerSection">
+        <h4 id="footerContactTitle" class="footerTitle">Contact</h4>
+        <address id="footerAddress" class="address">
+          Email:
+          <a href="mailto:contact@educonnect.example" class="footerLink">contact@educonnect.example</a>
+        </address>
+      </section>
+
+      <section id="footerSocialSection" class="footerSection">
+        <h4 id="footerSocialTitle" class="footerTitle">Social</h4>
+        <ul id="footerSocialList" class="footerList">
+          <li><a href="https://www.linkedin.com" class="footerLink" target="_blank">LinkedIn</a></li>
+          <li><a href="https://www.facebook.com" class="footerLink" target="_blank">Facebook</a></li>
+          <li><a href="https://twitter.com" class="footerLink" target="_blank">Twitter</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <div id="footerInfo" class="footerInfo">
+      <p id="copyrightText" class="footerText">&copy; 2026 EventX. All rights reserved.</p>
+      <p class="footerText">Designed for Excellence.</p>
+    </div>
+  </footer>
+  <!-- ========== END FOOTER ========= -->
+<script src="pages/scripts/common.js"></script>
+<script src="pages/scripts/auth.js"></script>
+</body>
+
+</html>

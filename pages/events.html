@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Upcoming events table showing event name, date, location, and cost.">
+  <meta name="keywords" content="EduConnect, events, schedule, workshop, seminar, location, cost">
+  <meta name="author" content="Your Full Name">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/events.css">
+  <title>Events - EduConnect</title>
+</head>
+
+<body id="eventsPage">
+  <!-- ========== HEADER SECTION ========== -->
+  <header id="siteHeader" class="header">
+    <div id="brandSection" class="brand">
+      <a href="../index.html" id="homeLink" class="logoLink" title="Go to EventsX Home">
+        <img src="images/1png.png" alt="EventsX logo" id="logoImage" class="logoImg">
+      </a>
+      <h1 id="siteTitle" class="titleText">EventsX</h1>
+    </div>
+
+    <!-- ========== MAIN NAVIGATION ========== -->
+    <nav id="mainNavigation" class="navBar" aria-label="Primary">
+      <ul id="navList" class="navList">
+        <li class="navItem"><a href="../index.html" id="navHome" class="navLink" title="Home">Home</a></li>
+        <li class="navItem"><a href="about.html" id="navAbout" class="navLink" title="About EduConnect">About Us</a>
+        </li>
+        <li class="navItem"><a href="events.html" id="navCourses" class="navLink" title="Browse course catalog">Course
+            Catalog</a></li>
+        <li class="navItem"><a href="student-dashboard.html" id="navDashboard" class="navLink"
+            title="Open student dashboard">Student Dashboard</a></li>
+        <li class="navItem"><a href="registration.html" id="navRegister" class="navLink"
+            title="Register for an event">Registration</a></li>
+        <li class="navItem"><a href="contact.html" id="navContact" class="navLink" title="Contact us">Contact Me</a>
+        </li>
+        <li class="navItem">
+          <a href="https://www.gu.edu.eg/" id="GalalaUniversityLink" class="navLink" target="_blank"
+            rel="noopener noreferrer" title="Visit University Website">Galala University</a>
+        </li>
+      </ul>
+      <!-- Profile Dropdown -->
+      <div id="profileContainer" class="profile-container" data-hidden="true">
+        <div class="profile-icon" title="Profile Menu"></div>
+        <div class="profile-dropdown">
+          <button type="button" class="profile-dropdown-item" data-action="switch">Sign Out</button>
+          <div class="profile-dropdown-divider"></div>
+          <button type="button" class="profile-dropdown-item" data-action="profile">Profile</button>
+        </div>
+      </div>
+    </nav>
+    <!-- ========== END MAIN NAVIGATION ========== -->
+  </header>
+  <!-- ========== END HEADER ========= -->
+
+  <!-- ========== BREADCRUMB ========== -->
+  <nav id="breadcrumbNav" class="breadcrumb" aria-label="breadcrumb">
+    <a href="../index.html" id="breadcrumbHome" class="breadcrumbLink" title="Home">Home</a>
+    <span id="breadcrumbSeparator" class="breadcrumbSep">&gt;</span>
+    <span id="breadcrumbCurrent" class="breadcrumbCurrent">Events</span>
+  </nav>
+  <!-- ========== END BREADCRUMB ========== -->
+
+  <!-- ========== MAIN SECTION ========== -->
+  <main id="mainContent" class="main">
+    <header id="pageHeader" class="pageHeader">
+      <h2 id="pageTitle" class="pageTitleText">Upcoming Events</h2>
+      <p id="pageIntro" class="paragraphText">
+        Browse the full schedule and pick what fits your goals.
+      </p>
+    </header>
+
+    <section id="filterSection" class="contentSection">
+      <h3 id="filterTitle" class="sectionTitle">Filter Events</h3>
+      <form id="filterForm" class="filter-form">
+        <div class="form-group">
+          <label for="keywordInput">Search Keyword</label>
+          <input type="text" id="keywordInput" placeholder="e.g. Python, Workshop, Seminar">
+        </div>
+        <div class="form-group">
+          <label for="categorySelect">Category</label>
+          <select id="categorySelect">
+            <option value="all">All Categories</option>
+            <option value="workshop">Workshop</option>
+            <option value="seminar">Seminar</option>
+            <option value="networking">Networking</option>
+            <option value="summit">Summit</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="locationInput">Location</label>
+          <input type="text" id="locationInput" placeholder="e.g. Main Campus, Lab A">
+        </div>
+        <div class="form-group">
+          <label for="dateInput">Date</label>
+          <input type="date" id="dateInput">
+        </div>
+        <div class="button-group">
+          <button type="button" id="filterButton" class="actionBtn">Filter Events</button>
+          <button type="button" id="resetButton" class="actionBtn">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="tableSection" class="contentSection">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+        <h3 id="tableTitle" class="sectionTitle" style="margin: 0;">Event Schedule</h3>
+        <button type="button" id="addEventButton" class="actionBtn add-event-btn" style="display: none;">+ Add Event</button>
+      </div>
+
+      <table id="eventsTable" class="table">
+        <caption id="tableCaption">EduConnect Upcoming Events</caption>
+        <thead id="tableHead">
+          <tr>
+            <th scope="col">Event Name</th>
+            <th scope="col">Date</th>
+            <th scope="col">Location</th>
+            <th scope="col">Cost</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+
+        <tbody id="tableBody">
+
+        </tbody>
+
+      </table>
+    </section>
+
+    <section id="notesSection" class="contentSection">
+      <h3 id="notesTitle" class="sectionTitle">How to Participate</h3>
+      <ol id="stepsList" class="numberList">
+        <li>Pick an event from the table.</li>
+        <li>Go to the registration page and submit your details.</li>
+        <li>Use the budget calculator to estimate total costs.</li>
+      </ol>
+    </section>
+
+    <section id="gallerySection" class="contentSection">
+      <h3 id="galleryTitle" class="sectionTitle">Event Gallery</h3>
+      <figure id="eventFigure1" class="mediaSection">
+        <img src="images/event-2.jpg" alt="Speaker presenting to students in a lecture hall" width="640" height="360"
+          id="eventImage1" class="mediaImg">
+        <figcaption id="eventCaption1" class="mediaCaption">
+          A snapshot from a previous seminar session.
+        </figcaption>
+      </figure>
+    </section>
+  </main>
+  <!-- ========== END MAIN SECTION ========== -->
+
+  <!-- ========== FOOTER SECTION ========== -->
+  <footer id="siteFooter" class="footer">
+    <div id="footerContent" class="footerContent">
+      <section id="footerLinksSection" class="footerSection">
+        <h4 id="footerLinksTitle" class="footerTitle">Links</h4>
+        <ul id="footerLinksList" class="footerList">
+          <li><a href="about.html" id="footerAbout" class="footerLink" title="About EduConnect">About Us</a></li>
+          <li><a href="contact.html" id="footerContact" class="footerLink" title="Contact page">Contact</a></li>
+          <li><a href="privacy.html" id="footerPrivacy" class="footerLink" title="Privacy policy placeholder">Privacy
+              Policy</a></li>
+          <li><a href="terms.html" id="footerTerms" class="footerLink" title="Terms of service placeholder">Terms of
+              Service</a></li>
+        </ul>
+      </section>
+
+      <section id="footerContactSection" class="footerSection">
+        <h4 id="footerContactTitle" class="footerTitle">Contact</h4>
+        <address id="footerAddress" class="address">
+          Email:
+          <a href="mailto:contact@educonnect.example" id="footerEmail" class="footerLink"
+            title="Send us an email">contact@educonnect.example</a>
+        </address>
+      </section>
+
+      <section id="footerSocialSection" class="footerSection">
+        <h4 id="footerSocialTitle" class="footerTitle">Social</h4>
+        <ul id="footerSocialList" class="footerList">
+          <li>
+            <a href="https://www.linkedin.com" id="footerLinkedIn" class="footerLink" target="_blank"
+              rel="noopener noreferrer" title="LinkedIn">LinkedIn</a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com" id="footerFacebook" class="footerLink" target="_blank"
+              rel="noopener noreferrer" title="Facebook">Facebook</a>
+          </li>
+          <li>
+            <a href="https://twitter.com" id="footerTwitter" class="footerLink" target="_blank"
+              rel="noopener noreferrer" title="Twitter">Twitter</a>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <div id="footerInfo" class="footerInfo">
+      <p id="copyrightText" class="footerText">&copy; 2025 EduConnect. All rights reserved.</p>
+      <p id="updatedText" class="footerText">
+        Last Updated:
+        <time datetime="2025-12-29" id="lastUpdated" class="timeText" title="Last updated date">
+          December 29, 2025
+        </time>
+      </p>
+    </div>
+  </footer>
+  <!-- ========== END FOOTER ========= -->
+
+  <!-- ========== ADD EVENT MODAL ========= -->
+  <div id="addEventModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modalTitle" class="sectionTitle">Add New Event</h3>
+        <button type="button" id="closeModalBtn" class="close-btn">&times;</button>
+      </div>
+      <form id="addEventForm" class="add-event-form">
+        <div class="form-group">
+          <label for="eventTitleInput">Event Title *</label>
+          <input type="text" id="eventTitleInput" name="title" required placeholder="e.g. Web Design Sprint">
+        </div>
+        <div class="form-group">
+          <label for="eventDescriptionInput">Description *</label>
+          <textarea id="eventDescriptionInput" name="description" rows="3" required placeholder="Event description"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="eventDateInput">Date *</label>
+          <input type="date" id="eventDateInput" name="date" required>
+        </div>
+        <div class="form-group">
+          <label for="eventLocationInput">Location *</label>
+          <input type="text" id="eventLocationInput" name="location" required placeholder="e.g. Lab A - Main Campus">
+        </div>
+        <div class="form-group">
+          <label for="eventCategoryInput">Category *</label>
+          <select id="eventCategoryInput" name="category" required>
+            <option value="">Select Category</option>
+            <option value="workshop">Workshop</option>
+            <option value="seminar">Seminar</option>
+            <option value="networking">Networking</option>
+            <option value="summit">Summit</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="eventCostInput">Cost ($)</label>
+          <input type="number" id="eventCostInput" name="cost" min="0" step="0.01" value="0" placeholder="0">
+        </div>
+        <div class="modal-buttons">
+          <button type="button" id="cancelBtn" class="actionBtn cancel-btn">Cancel</button>
+          <button type="submit" id="submitEventBtn" class="actionBtn submit-btn">Add Event</button>
+        </div>
+        <div id="formMessage" class="form-message"></div>
+      </form>
+    </div>
+  </div>
+  <!-- ========== END ADD EVENT MODAL ========= -->
+
+  <script src="scripts/common.js"></script>
+  <script src="scripts/event-filter.js"></script>
+</body>
+
+</html>

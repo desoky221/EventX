@@ -1,0 +1,257 @@
+/* STUDENT-DASHBOARD.CSS - FINAL OPTIMIZED VERSION */
+
+/* ============================================
+   1. LAYOUT & GRID SPACE OPTIMIZATION
+   ============================================ */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 350px; /* Wider sidebar to fill horizontal gap */
+    gap: 40px; 
+    margin: 30px auto;
+    max-width: 1300px; /* Expanded for larger monitors */
+}
+
+/* ============================================
+   2. DASHBOARD HERO HEADER
+   ============================================ */
+.pageHeader {
+    background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+    color: white;
+    padding: 50px;
+    border-radius: 25px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 15px 35px rgba(30, 58, 95, 0.2);
+}
+
+.pageTitleText {
+    font-size: 32px;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+/* Header Metrics */
+.stats-container {
+    display: flex;
+    gap: 20px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.1); 
+    padding: 15px 25px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    display: block;
+}
+
+.stat-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+/* ============================================
+   3. EVENTS ATTENDED (Main Content Cards)
+   ============================================ */
+#enrolled-courses article {
+    display: flex; 
+    background: white;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    padding: 10px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+#enrolled-courses article:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-secondary);
+    box-shadow: var(--shadow-md);
+}
+
+#enrolled-courses figure {
+    width: 280px; /* Increased image size to fill space */
+    height: 180px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#enrolled-courses img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.course-details {
+    padding: 30px;
+    flex-grow: 1;
+}
+
+.course-details h3 {
+    color: var(--color-primary);
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.continue-btn {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.continue-btn:hover {
+    background-color: var(--color-secondary);
+}
+
+/* ============================================
+   4. EVENT PARTICIPATION STATISTICS (Solid Grid)
+   ============================================ */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin: 2rem 0 4rem;
+}
+
+.stat-box {
+    background: #ffffff;
+    padding: 3rem 1.5rem; /* Tall padding to prevent empty vertical space */
+    border-radius: 20px;
+    border: 1px solid var(--color-border);
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-secondary);
+    box-shadow: var(--shadow-md);
+}
+
+.stat-title {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-primary);
+}
+
+/* ============================================
+   5. SIDEBAR WIDGETS & CALENDAR
+   ============================================ */
+.sidebar-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#recommendedSection, #calendarSection {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+}
+
+.sidebar-column h3 {
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+    font-weight: 700;
+}
+
+/* Pill-style Action Links */
+#recommendedSection ul {
+    list-style: none;
+    padding: 0;
+}
+
+#recommendedSection a {
+    display: block;
+    padding: 15px;
+    background-color: #f1f5f9;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 12px;
+    margin-top: 10px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+#recommendedSection a:hover {
+    background-color: var(--color-secondary);
+    color: white;
+}
+
+/* Calendar Styling */
+.calendar-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 5px;
+}
+
+.calendar-table td {
+    background-color: #f8fafc;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    border-radius: 10px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.calendar-table td.active {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+/* ============================================
+   6. RESPONSIVE ADJUSTMENTS
+   ============================================ */
+@media (max-width: 1000px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    #enrolled-courses article {
+        flex-direction: column;
+    }
+    
+    #enrolled-courses figure {
+        width: 100%;
+        height: 200px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}

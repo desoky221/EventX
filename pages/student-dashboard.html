@@ -1,0 +1,245 @@
+<!--
+AI Tools Usage:
+AI tools (ChatGPT/Claude) were used to generate and refine the internal text content throughout this page,
+including paragraph text, course descriptions, activity logs, deadlines, and other textual content within HTML elements.
+All HTML structure, semantic elements, and code implementation were written manually.
+And it helps in debugging the code and make it more readable and maintainable.
+my github: https://github.com/desoky221/EDUconnect
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Dashboard - Track your learning progress, deadlines, and achievements.">
+    <meta name="keywords" content="Student Dashboard, EduConnect, Learning Progress, Courses, Deadlines, Statistics">
+    <meta name="author" content="youssef ahmed/223101109 - abdallah mahdy/223104683">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/student-dashboard.css">
+    <title>Student Dashboard - EduConnect</title>
+</head>
+
+<body>
+
+    <!-- ========== HEADER SECTION ========== -->
+    <!-- ========== HEADER SECTION ========== -->
+    <header id="siteHeader" class="header">
+        <div id="brandSection" class="brand">
+            <a href="../index.html" id="homeLink" class="logoLink" title="Go to EventsX Home">
+                <img src="images/1png.png" alt="EventsX logo" id="logoImage" class="logoImg">
+            </a>
+            <h1 id="siteTitle" class="titleText">EventsX</h1>
+        </div>
+
+        <nav id="mainNavigation" class="navBar" aria-label="Primary">
+            <ul id="navList" class="navList">
+              <li class="navItem"><a href="../index.html" id="navHome" class="navLink" title="Home">Home</a></li>
+              <li class="navItem"><a href="about.html" id="navAbout" class="navLink" title="About EduConnect">About Us</a>
+              </li>
+              <li class="navItem"><a href="events.html" id="navCourses" class="navLink" title="Browse course catalog">Course
+                  Catalog</a></li>
+              <li class="navItem"><a href="student-dashboard.html" id="navDashboard" class="navLink"
+                  title="Open student dashboard">Student Dashboard</a></li>
+              <li class="navItem"><a href="registration.html" id="navRegister" class="navLink"
+                  title="Register for an event">Registration</a></li>
+              <li class="navItem"><a href="contact.html" id="navContact" class="navLink" title="Contact us">Contact Me</a>
+              </li>
+              <li class="navItem">
+                <a href="https://www.gu.edu.eg/" id="GalalaUniversityLink" class="navLink" target="_blank"
+                  rel="noopener noreferrer" title="Visit University Website">Galala University</a>
+              </li>
+            </ul>
+            <!-- Profile Dropdown -->
+            <div id="profileContainer" class="profile-container" data-hidden="true">
+              <div class="profile-icon" title="Profile Menu"></div>
+              <div class="profile-dropdown">
+                <button type="button" class="profile-dropdown-item" data-action="switch">Sign Out</button>
+                <div class="profile-dropdown-divider"></div>
+                <button type="button" class="profile-dropdown-item" data-action="profile">Profile</button>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <!-- ========== END HEADER ========= -->
+
+    <!-- ========== BREADCRUMB ========== -->
+    <nav id="breadcrumbNav" class="breadcrumb" aria-label="breadcrumb">
+        <a href="../index.html" id="breadcrumbHome" class="breadcrumbLink" title="Home">Home</a>
+        <span id="breadcrumbSeparator" class="breadcrumbSep">&gt;</span>
+        <span id="breadcrumbCurrent" class="breadcrumbCurrent">Dashboard</span>
+    </nav>
+    <!-- ========== END BREADCRUMB ========== -->
+
+    <!-- ========== MAIN SECTION ========== -->
+    <main id="mainContent" class="main">
+
+    <header id="pageHeader" class="pageHeader">
+        <h2 id="pageTitle" class="pageTitleText">Welcome back, Student</h2>
+
+        <div id="quickStats" class="stats-container">
+            <div class="stat-card glass-panel">
+                <span class="stat-label">Total Events</span>
+                <span class="stat-value">4</span>
+            </div>
+            <div class="stat-card glass-panel">
+                <span class="stat-label">Completed</span>
+                <span class="stat-value">1</span>
+            </div>
+            <div class="stat-card glass-panel">
+                <span class="stat-label">In Progress</span>
+                <span class="stat-value">3</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-grid">
+
+        <div class="main-column">
+
+            <section id="enrolled-courses">
+                <h2>Events Attended</h2>
+
+                <article class="course-card">
+                    <figure>
+                        <img src="images/study1.jpeg" alt="Web Development Thumbnail" width="150">
+                    </figure>
+                    <div class="course-details">
+                        <h3>Web Development Fundamentals</h3>
+                        <p><strong>Instructor:</strong> Dr. Samy Ghoniemy</p>
+                        <p>Progress: 45% Completed</p>
+                        <p>Last Accessed: <time datetime="2025-11-27">November 27, 2025</time></p>
+                        <button type="button" class="continue-btn" onclick="window.location.href='events.html'">Continue Learning</button>
+                    </div>
+                </article>
+
+                <article class="course-card">
+                    <figure>
+                        <img src="images/study2.jpg" alt="Data Science Thumbnail" width="150">
+                    </figure>
+                    <div class="course-details">
+                        <h3>Python for Data Science</h3>
+                        <p><strong>Instructor:</strong> Dr. Shakir</p>
+                        <p>Progress: 12% Completed</p>
+                        <p>Last Accessed: <time datetime="2025-11-20">November 20, 2025</time></p>
+                        <button type="button" class="continue-btn" onclick="window.location.href='events.html'">Continue Learning</button>
+                    </div>
+                </article>
+            </section>
+
+        <section id="progress-statistics">
+            <h2>Event Participation Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <span class="stat-title">Events Attended</span>
+                    <span class="stat-number">0</span>
+                </div>
+                
+             
+                
+                <div class="stat-box">
+                    <span class="stat-title">Workshops Done</span>
+                    <span class="stat-number">0</span>
+                </div>
+                
+               
+            </div>
+        </section>
+        </div>
+
+        <aside id="dashboardSidebar" class="sidebar-column">
+            
+            <section id="recommendedSection">
+                <h3>Recommended for You</h3>
+                <ul>
+                    <li><a href="events.html" title="Advanced JavaScript">Advanced JavaScript</a></li>
+                    <li><a href="events.html" title="React Native">React Native</a></li>
+                </ul>
+            </section>
+
+            <section id="calendarSection">
+                <h3>Calendar</h3>
+                <table id="dashboardCalendar" class="calendar-table">
+                    <caption>November 2025</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Su</th><th scope="col">Mo</th><th scope="col">Tu</th>
+                            <th scope="col">We</th><th scope="col">Th</th><th scope="col">Fr</th>
+                            <th scope="col">Sa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td></tr>
+                        <tr><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+                        <tr><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr>
+                        <tr><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr>
+                        <tr><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td></td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </aside>
+    </div>
+</main>
+    <!-- ========== END MAIN SECTION ========== -->
+    <!-- ========== FOOTER SECTION ========== -->
+    <footer id="siteFooter" class="footer">
+        <div id="footerContent" class="footerContent">
+            <section id="footerLinksSection" class="footerSection">
+                <h2 id="footerLinksTitle" class="footerTitle">Links</h2>
+                <ul id="footerLinksList" class="footerList">
+                    <li><a href="about.html" id="footerAbout" class="footerLink" title="About EduConnect">About Us</a>
+                    </li>
+                    <li><a href="contact.html" id="footerContact" class="footerLink" title="Contact page">Contact</a>
+                    </li>
+                    <li><a href="privacy.html" id="footerPrivacy" class="footerLink"
+                            title="Privacy policy placeholder">Privacy Policy</a></li>
+                    <li><a href="terms.html" id="footerTerms" class="footerLink"
+                            title="Terms of service placeholder">Terms of Service</a></li>
+                </ul>
+            </section>
+
+            <section id="footerContactSection" class="footerSection">
+                <h2 id="footerContactTitle" class="footerTitle">Contact</h2>
+                <address id="footerAddress" class="address">
+                    Email:
+                    <a href="mailto:contact@educonnect.example" id="footerEmail" class="footerLink"
+                        title="Send us an email">contact@educonnect.example</a>
+                </address>
+            </section>
+
+            <section id="footerSocialSection" class="footerSection">
+                <h2 id="footerSocialTitle" class="footerTitle">Social</h2>
+                <ul id="footerSocialList" class="footerList">
+                    <li>
+                        <a href="https://www.linkedin.com" id="footerLinkedIn" class="footerLink" target="_blank"
+                            rel="noopener noreferrer" title="LinkedIn">LinkedIn</a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com" id="footerFacebook" class="footerLink" target="_blank"
+                            rel="noopener noreferrer" title="Facebook">Facebook</a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com" id="footerTwitter" class="footerLink" target="_blank"
+                            rel="noopener noreferrer" title="Twitter">Twitter</a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <div id="footerInfo" class="footerInfo">
+            <p id="copyrightText" class="footerText">&copy; 2025 EduConnect. All rights reserved.</p>
+            <p id="updatedText" class="footerText">
+                Last Updated:
+                <time datetime="2025-12-29" id="lastUpdated" class="timeText" title="Last updated date">
+                    December 29, 2025
+                </time>
+            </p>
+        </div>
+    </footer>
+    <!-- ========== END FOOTER ========= -->
+    <script src="scripts/common.js"></script>
+    <script src="scripts/dashboard.js"></script>
+</body>
+
+</html>

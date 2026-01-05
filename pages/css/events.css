@@ -1,0 +1,709 @@
+/* 
+   Events Page - High End Refactor
+   Features: Beautiful data grid table, interactive gallery, and clean typography.
+*/
+
+.main {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+/* ============================================
+   FILTER FORM STYLING
+   ============================================ */
+#filterSection {
+  background: white;
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 3rem;
+}
+
+.filter-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  align-items: end;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filter-form input[type="text"],
+.filter-form input[type="date"],
+.filter-form select {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.filter-form input[type="text"]:focus,
+.filter-form input[type="date"]:focus,
+.filter-form select:focus {
+  outline: none;
+  border-color: var(--color-secondary);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(74, 155, 142, 0.1);
+}
+
+.filter-form input[type="text"]::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.6;
+}
+
+.filter-form select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231e3a5f' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+/* Button group styling for filter form */
+.filter-form .button-group {
+  display: flex;
+  gap: 1rem;
+  align-items: end;
+  grid-column: 1 / -1; /* Span all columns */
+}
+
+/* Button styling for filter form */
+#filterForm .actionBtn {
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex: 1; /* Make buttons equal width */
+  min-width: 140px;
+}
+
+#filterButton {
+  background: linear-gradient(135deg, var(--color-secondary), #3d8b7d);
+  color: white;
+  box-shadow: 0 4px 15px rgba(74, 155, 142, 0.25);
+}
+
+#filterButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(74, 155, 142, 0.35);
+}
+
+#filterButton:active {
+  transform: translateY(0);
+}
+
+#resetButton {
+  background: white;
+  color: var(--color-text-primary);
+  border: 2px solid var(--color-border);
+}
+
+#resetButton:hover {
+  background: var(--color-bg-primary);
+  border-color: var(--color-secondary);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#resetButton:active {
+  transform: translateY(0);
+}
+
+/* Responsive filter form */
+@media (max-width: 768px) {
+  .filter-form {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  .filter-form .button-group {
+    flex-direction: column;
+    grid-column: 1 / -1;
+  }
+  
+  #filterForm .actionBtn {
+    width: 100%;
+  }
+}
+
+/* ============================================
+   TABLE STYLING (The "Schedule")
+   ============================================ */
+.table {
+  width: 100%;
+  border-collapse: separate;
+  /* Allows border-radius */
+  border-spacing: 0;
+  margin: 2rem 0;
+  background: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  animation: slideIn 0.8s ease-out;
+}
+
+#tableCaption {
+  caption-side: top;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  text-align: left;
+  padding-left: 0.5rem;
+}
+
+.table thead {
+  background: var(--color-primary);
+  color: white;
+}
+
+.table th {
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.table td {
+  padding: 1.25rem 1.5rem;
+  color: var(--color-text-secondary);
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color 0.2s;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Row Hover Effect */
+.table tbody tr:hover td {
+  background-color: var(--color-bg-primary);
+  color: var(--color-primary);
+  cursor: default;
+}
+
+/* Highlighting Costs/Dates */
+.table td:nth-child(2) {
+  /* Date */
+  font-weight: 500;
+  color: var(--color-secondary);
+}
+
+.table td:nth-last-child(2) {
+  /* Cost */
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* Enroll Button */
+.enroll-btn {
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(135deg, var(--color-secondary), #3d8b7d);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.enroll-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 155, 142, 0.3);
+}
+
+.enroll-btn:active {
+  transform: translateY(0);
+}
+
+/* Special Rows */
+.special-header td {
+  background-color: var(--color-bg-primary);
+  color: var(--color-primary);
+  font-weight: 800;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border-bottom: 2px solid var(--color-border);
+}
+
+/* ============================================
+   NOTES & STEPS
+   ============================================ */
+#notesSection {
+  background: white;
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  color: var(--color-primary);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.numberList {
+  counter-reset: step-counter;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.numberList li {
+  background: var(--color-bg-primary);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  position: relative;
+  border: 1px solid var(--color-border);
+  transition: transform 0.3s;
+}
+
+.numberList li::before {
+  counter-increment: step-counter;
+  content: counter(step-counter);
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  background: var(--color-secondary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  /* Centering */
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.numberList li:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   GALLERY
+   ============================================ */
+#gallerySection {
+  margin-top: 4rem;
+}
+
+.mediaSection {
+  margin: 0;
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.mediaImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.mediaSection:hover .mediaImg {
+  transform: scale(1.05);
+}
+
+.mediaCaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(30, 58, 95, 0.85);
+  /* Primary color w/ opacity */
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  backdrop-filter: blur(4px);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.mediaSection:hover .mediaCaption {
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  .table thead {
+    display: none;
+    /* Hide headers on mobile */
+  }
+
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
+  }
+
+  .table tr {
+    margin-bottom: 1.5rem;
+    background: white;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+  }
+
+  .table td {
+    padding: 1rem;
+    text-align: right;
+    border-bottom: 1px solid var(--color-bg-primary);
+    position: relative;
+  }
+
+  /* Simulate labels */
+  .table td::before {
+    content: attr(data-label);
+    /* Requires data-label in HTML, but we don't have it. Fallback: */
+    /* Since we can't edit HTML freely, we rely on Clean Layout for mobile row. */
+    float: left;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+  }
+
+  /* Specific overrides since we don't have data-labels */
+  .table td:nth-child(1) {
+    text-align: left;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    background: var(--color-bg-primary);
+  }
+
+  .table td:nth-child(2) {
+    text-align: left;
+    padding-top: 0.5rem;
+  }
+
+  .table td:nth-child(3) {
+    text-align: left;
+  }
+
+  .table td:nth-child(4) {
+    text-align: right;
+    font-size: 1.2rem;
+  }
+}
+
+/* ============================================
+   ADD EVENT BUTTON
+   ============================================ */
+.add-event-btn {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  color: white;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(30, 58, 95, 0.25);
+}
+
+.add-event-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(30, 58, 95, 0.35);
+}
+
+.add-event-btn:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+   MODAL STYLES
+   ============================================ */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: white;
+  margin: auto;
+  padding: 0;
+  border-radius: var(--radius-lg);
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.3s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.modal-header .sectionTitle {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  background-color: var(--color-bg-primary);
+  color: var(--color-primary);
+  transform: rotate(90deg);
+}
+
+.add-event-form {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.add-event-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-event-form .form-group label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.add-event-form input[type="text"],
+.add-event-form input[type="date"],
+.add-event-form input[type="number"],
+.add-event-form select,
+.add-event-form textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-secondary);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.add-event-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.add-event-form input:focus,
+.add-event-form select:focus,
+.add-event-form textarea:focus {
+  outline: none;
+  border-color: var(--color-secondary);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(74, 155, 142, 0.1);
+}
+
+.add-event-form input::placeholder,
+.add-event-form textarea::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.6;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.modal-buttons .actionBtn {
+  flex: 1;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, var(--color-secondary), #3d8b7d);
+  color: white;
+  box-shadow: 0 4px 15px rgba(74, 155, 142, 0.25);
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(74, 155, 142, 0.35);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.cancel-btn {
+  background: white;
+  color: var(--color-text-primary);
+  border: 2px solid var(--color-border);
+}
+
+.cancel-btn:hover {
+  background: var(--color-bg-primary);
+  border-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.form-message {
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  margin-top: 1rem;
+  display: none;
+  text-align: center;
+  font-weight: 600;
+}
+
+.form-message.success {
+  display: block;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.form-message.error {
+  display: block;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive modal */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    margin: 1rem;
+  }
+
+  .modal-header {
+    padding: 1.5rem 1.5rem 1rem;
+  }
+
+  .add-event-form {
+    padding: 1.5rem;
+  }
+
+  .modal-buttons {
+    flex-direction: column;
+  }
+
+  .modal-buttons .actionBtn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,97 @@
+#privacyPage main {
+    max-width: 800px; 
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+
+#privacyPage section{
+    background-color: var(--color-bg-secondary);
+    border-left: 5px solid var(--color-primary); 
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border-top: 1px solid var(--color-border);
+    border-right: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+
+
+#privacyPage section h2 {
+    color: var(--color-primary);
+    font-size: 24px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+#privacyPage section h3 {
+    color: var(--color-text-primary);
+    font-size: 18px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+
+#privacyPage p {
+    color: var(--color-text-secondary);
+    line-height: 1.8; 
+    margin-bottom: 15px;
+}
+
+#privacyPage ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+#privacyPage li {
+    margin-bottom: 8px;
+}
+
+#privacyPage strong {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+
+#privacyPage .notice {
+    background-color: #fcf8f3; 
+    border-left: 5px solid var(--color-accent);
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: var(--radius-md);
+}
+
+#privacyPage .notice h3 {
+    color: var(--color-accent);
+    margin-top: 0;
+}
+
+
+#privacyPage .effective-date {
+    background-color: var(--color-bg-tertiary);
+    color: var(--color-text-secondary);
+    padding: 15px;
+    border-radius: var(--radius-md);
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 30px;
+    border: 1px solid var(--color-border);
+}
+
+
+#privacyPage main address {
+    background-color: var(--color-bg-tertiary);
+    padding: 20px;
+    border-radius: var(--radius-md);
+    font-style: normal;
+    border: 1px solid var(--color-border);
+    line-height: 1.6;
+}
+
+#privacyPage main address strong {
+    display: block;
+    margin-bottom: 5px;
+}

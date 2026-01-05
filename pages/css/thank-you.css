@@ -1,0 +1,106 @@
+
+.confirmation-message {
+    max-width: 600px;
+    margin: 60px auto;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: var(--radius-xl);
+    border-top: 6px solid #48bb78; 
+    box-shadow: var(--shadow-xl);
+    
+   
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+main header h2 {
+    font-size: 32px;
+    color: var(--color-primary);
+    margin-bottom: 30px;
+}
+
+
+main header h2::before {
+    content: "✓";
+    display: block;
+    width: 70px;
+    height: 70px;
+    background-color: #48bb78; 
+    color: #ffffff;
+    border-radius: 50%;
+    line-height: 70px;
+    font-size: 40px;
+    margin: 0 auto 20px auto;
+}
+
+
+.confirmation-message p {
+    font-size: 18px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.confirmation-message ul {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+.confirmation-message a {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    border-radius: var(--radius-md);
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.confirmation-message a:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-2px);
+}
+
+
+#nextStepsSection {
+    max-width: 500px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+#nextStepsList {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#nextStepsList li {
+    margin-bottom: 12px;
+}
+
+#nextStepsList .textLink {
+    display: block;
+    padding: 15px;
+    background-color: #ffffff;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius-md);
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+#nextStepsList .textLink:hover {
+    background-color: var(--color-primary);
+    color: #ffffff;
+}

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Edit your profile information">
+  <meta name="keywords" content="Profile, Edit Profile, EventsX, User Settings">
+  <meta name="author" content="Your Full Name">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/profile.css">
+  <title>Profile - EduConnect</title>
+</head>
+
+<body id="profilePage">
+  <!-- ========== HEADER SECTION ========== -->
+  <header id="siteHeader" class="header">
+    <div id="brandSection" class="brand">
+      <a href="../index.html" id="homeLink" class="logoLink" title="Go to EventsX Home">
+        <img src="images/1png.png" alt="EventsX logo" id="logoImage" class="logoImg">
+      </a>
+      <h1 id="siteTitle" class="titleText">EventsX</h1>
+    </div>
+
+    <!-- ========== MAIN NAVIGATION ========== -->
+    <nav id="mainNavigation" class="navBar" aria-label="Primary">
+      <ul id="navList" class="navList">
+        <li class="navItem"><a href="../index.html" id="navHome" class="navLink" title="Home">Home</a></li>
+        <li class="navItem"><a href="about.html" id="navAbout" class="navLink" title="About EduConnect">About Us</a>
+        </li>
+        <li class="navItem"><a href="events.html" id="navCourses" class="navLink" title="Browse course catalog">Course
+            Catalog</a></li>
+        <li class="navItem"><a href="student-dashboard.html" id="navDashboard" class="navLink"
+            title="Open student dashboard">Student Dashboard</a></li>
+        <li class="navItem"><a href="registration.html" id="navRegister" class="navLink"
+            title="Register for an event">Registration</a></li>
+        <li class="navItem"><a href="contact.html" id="navContact" class="navLink" title="Contact us">Contact Me</a>
+        </li>
+        <li class="navItem">
+          <a href="https://www.gu.edu.eg/" id="GalalaUniversityLink" class="navLink" target="_blank"
+            rel="noopener noreferrer" title="Visit University Website">Galala University</a>
+        </li>
+      </ul>
+      <!-- Profile Dropdown -->
+      <div id="profileContainer" class="profile-container" data-hidden="true">
+        <div class="profile-icon" title="Profile Menu"></div>
+        <div class="profile-dropdown">
+          <button type="button" class="profile-dropdown-item" data-action="switch">Sign Out</button>
+          <div class="profile-dropdown-divider"></div>
+          <button type="button" class="profile-dropdown-item" data-action="profile">Profile</button>
+        </div>
+      </div>
+    </nav>
+    <!-- ========== END MAIN NAVIGATION ========== -->
+  </header>
+  <!-- ========== END HEADER ========= -->
+  <nav class="breadcrumb" aria-label="breadcrumb">
+    <a href="../index.html">Home</a> &gt; Profile
+  </nav>
+
+  <main id="mainContent">
+    <div class="profile-wrapper">
+      <section class="profile-container-section">
+        <div class="profile-header">
+          <h2>Edit Profile</h2>
+          <p class="subtitle">Update your personal information</p>
+        </div>
+
+        <div class="profile-content">
+          <!-- Profile Picture Section -->
+          <div class="profile-picture-section">
+            <div class="profile-picture-container">
+              <img id="profilePicturePreview" src="" alt="Profile Picture" class="profile-picture">
+              <div class="profile-picture-overlay">
+                <label for="profilePictureInput" class="profile-picture-label">
+                  <span class="icon">📷</span>
+                  <span>Change Photo</span>
+                </label>
+                <input type="file" id="profilePictureInput" accept="image/*" style="display: none;">
+              </div>
+            </div>
+            <p class="profile-picture-hint">Click to upload a new profile picture</p>
+          </div>
+
+          <form id="profileForm">
+            <div class="input-group">
+              <span class="icon">👤</span>
+              <input type="text" id="profileName" placeholder="Full Name" required>
+            </div>
+
+            <div class="input-group">
+              <span class="icon">✉️</span>
+              <input type="email" id="profileEmail" placeholder="Email Address" disabled>
+              <small class="input-hint">Email cannot be changed</small>
+            </div>
+
+            <div class="input-group">
+              <span class="icon">📅</span>
+              <input type="date" id="profileBirthday" placeholder="Birthday">
+            </div>
+
+            <div class="input-group">
+              <span class="icon">⚥</span>
+              <select id="profileGender">
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <span class="icon">📱</span>
+              <input type="tel" id="profilePhone" placeholder="Phone Number">
+            </div>
+
+            <div id="profileMessage" class="form-message" style="display: none;"></div>
+
+            <button type="submit" class="main-submit" id="saveProfileBtn">Save Changes <span>→</span></button>
+          </form>
+        </div>
+      </section>
+
+      <div class="visual-container">
+        <div class="floating-card card-1">
+          <img src="images/Registration_Paper-removebg-preview.png" alt="Profile">
+        </div>
+
+        <div class="floating-card card-2">
+          <img src="images/Registration_Confirmed-removebg-preview.png" alt="Updated">
+        </div>
+
+        <div class="blob-shape"></div>
+      </div>
+    </div>
+  </main>
+  <!-- ========== END MAIN SECTION ========== -->
+
+  <!-- ========== FOOTER SECTION ========== -->
+  <footer id="siteFooter" class="footer">
+    <div id="footerContent" class="footerContent">
+      <section id="footerLinksSection" class="footerSection">
+        <h2 id="footerLinksTitle" class="footerTitle">Links</h2>
+        <ul id="footerLinksList" class="footerList">
+          <li><a href="about.html" id="footerAbout" class="footerLink" title="About EduConnect">About Us</a></li>
+          <li><a href="contact.html" id="footerContact" class="footerLink" title="Contact page">Contact</a></li>
+          <li><a href="privacy.html" id="footerPrivacy" class="footerLink" title="Privacy policy placeholder">Privacy
+              Policy</a></li>
+          <li><a href="terms.html" id="footerTerms" class="footerLink" title="Terms of service placeholder">Terms of
+              Service</a></li>
+        </ul>
+      </section>
+
+      <section id="footerContactSection" class="footerSection">
+        <h2 id="footerContactTitle" class="footerTitle">Contact</h2>
+        <address id="footerAddress" class="address">
+          Email:
+          <a href="mailto:contact@educonnect.example" id="footerEmail" class="footerLink"
+            title="Send us an email">contact@educonnect.example</a>
+        </address>
+      </section>
+
+      <section id="footerSocialSection" class="footerSection">
+        <h2 id="footerSocialTitle" class="footerTitle">Social</h2>
+        <ul id="footerSocialList" class="footerList">
+          <li>
+            <a href="https://www.linkedin.com" id="footerLinkedIn" class="footerLink" target="_blank"
+              rel="noopener noreferrer" title="LinkedIn">LinkedIn</a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com" id="footerFacebook" class="footerLink" target="_blank"
+              rel="noopener noreferrer" title="Facebook">Facebook</a>
+          </li>
+          <li>
+            <a href="https://twitter.com" id="footerTwitter" class="footerLink" target="_blank"
+              rel="noopener noreferrer" title="Twitter">Twitter</a>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <div id="footerInfo" class="footerInfo">
+      <p id="copyrightText" class="footerText">&copy; <span class="copyright-year">2025</span> EduConnect. All rights reserved.</p>
+      <p id="updatedText" class="footerText">
+        Last Updated:
+        <time datetime="2025-12-29" id="lastUpdated" class="timeText" title="Last updated date">
+          December 29, 2025
+        </time>
+      </p>
+    </div>
+  </footer>
+  <!-- ========== END FOOTER ========= -->
+  <script src="scripts/common.js"></script>
+  <script src="scripts/profile.js"></script>
+</body>
+
+</html>
+

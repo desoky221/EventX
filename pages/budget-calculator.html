@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Budget calculator form for estimating event-related costs such as tickets, transportation, and accommodation."
+    >
+    <meta
+      name="keywords"
+      content="EduConnect, budget calculator, event costs, tickets, transportation, accommodation"
+    >
+    <meta name="author" content="Your Full Name">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/budget-calculator.css">
+    <title>Budget Calculator - EduConnect</title>
+
+    <!-- optional tiny inline style to keep total in same row nicely -->
+    <style>
+      .budgetInlineRow {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .budgetInlineRow .formInput {
+        flex: 1;
+        min-width: 180px;
+      }
+    </style>
+  </head>
+
+  <body id="budgetPage">
+    <!-- ========== HEADER SECTION ========== -->
+    <header id="siteHeader" class="header">
+      <div id="brandSection" class="brand">
+        <a href="../index.html" id="homeLink" class="logoLink" title="Go to EventsX Home">
+          <img
+            src="../images/1png.png"
+            alt="EventsX logo"
+            id="logoImage"
+            class="logoImg"
+          >
+        </a>
+        <h1 id="siteTitle" class="titleText">EventsX</h1>
+      </div>
+
+      <!-- ========== MAIN NAVIGATION ========== -->
+      <nav id="mainNavigation" class="navBar" aria-label="Primary">
+        <ul id="navList" class="navList">
+          <li class="navItem"><a href="../index.html" id="navHome" class="navLink" title="Home">Home</a></li>
+          <li class="navItem"><a href="about.html" id="navAbout" class="navLink" title="About EduConnect">About Us</a>
+          </li>
+          <li class="navItem"><a href="events.html" id="navCourses" class="navLink" title="Browse course catalog">Course
+              Catalog</a></li>
+          <li class="navItem"><a href="student-dashboard.html" id="navDashboard" class="navLink"
+              title="Open student dashboard">Student Dashboard</a></li>
+          <li class="navItem"><a href="registration.html" id="navRegister" class="navLink"
+              title="Register for an event">Registration</a></li>
+          <li class="navItem"><a href="contact.html" id="navContact" class="navLink" title="Contact us">Contact Me</a>
+          </li>
+          <li class="navItem">
+            <a href="https://www.gu.edu.eg/" id="GalalaUniversityLink" class="navLink" target="_blank"
+              rel="noopener noreferrer" title="Visit University Website">Galala University</a>
+          </li>
+        </ul>
+        <!-- Profile Dropdown -->
+        <div id="profileContainer" class="profile-container" data-hidden="true">
+          <div class="profile-icon" title="Profile Menu"></div>
+          <div class="profile-dropdown">
+            <button type="button" class="profile-dropdown-item" data-action="switch">Sign Out</button>
+            <div class="profile-dropdown-divider"></div>
+            <button type="button" class="profile-dropdown-item" data-action="profile">Profile</button>
+          </div>
+        </div>
+      </nav>
+      <!-- ========== END MAIN NAVIGATION ========== -->
+    </header>
+    <!-- ========== END HEADER ========= -->
+
+    <!-- ========== BREADCRUMB ========== -->
+    <nav id="breadcrumbNav" class="breadcrumb" aria-label="breadcrumb">
+      <a href="../index.html" id="breadcrumbHome" class="breadcrumbLink" title="Home">Home</a>
+      <span id="breadcrumbSeparator" class="breadcrumbSep">&gt;</span>
+      <span id="breadcrumbCurrent" class="breadcrumbCurrent">Budget Calculator</span>
+    </nav>
+    <!-- ========== END BREADCRUMB ========== -->
+
+    <!-- ========== MAIN SECTION ========== -->
+    <main id="mainContent" class="main">
+      <header id="pageHeader" class="pageHeader">
+        <h2 id="pageTitle" class="pageTitleText">Budget Calculator</h2>
+        <p id="pageIntro" class="paragraphText">
+          Fill the fields and calculate your total manually.
+          You can also save/print this page.
+        </p>
+      </header>
+
+      <section id="budgetSection" class="contentSection">
+        <h3 id="budgetSectionTitle" class="sectionTitle">Budget Form</h3>
+
+        <!-- Const ticket price -->
+        <form
+          action="#"
+          method="post"
+          id="budgetForm"
+          class="formBox"
+          data-ticket-price="5"
+        >
+          <fieldset id="costFieldset" class="fieldsetBox">
+            <legend id="costLegend" class="legendText">Event Costs</legend>
+
+            <!-- Enrolled Events List -->
+            <div id="enrolledEventsSection" class="formRow" style="margin-bottom: 20px;">
+              <label class="formLabel">Enrolled Events</label>
+              <div id="enrolledEventsList" style="margin-top: 10px;">
+                <!-- Events will be dynamically added here -->
+              </div>
+              <button type="button" id="addMoreEventsBtn" class="actionBtn" style="margin-top: 10px;">
+                Add More Events
+              </button>
+            </div>
+
+            <!-- Tickets Total (sum of all enrolled events) -->
+            <p class="formRow">
+              <label for="ticketsTotalField" class="formLabel">Total Tickets Price</label>
+              <input
+                type="text"
+                id="ticketsTotalField"
+                class="formInput"
+                value="Total: $0.00"
+                readonly
+                aria-label="Tickets total"
+                title="Tickets total"
+              >
+            </p>
+
+            <!-- Use Transportation? -->
+            <p class="formRow">
+  <label class="formLabel">Use Transportation?</label>
+
+  <label>
+    <input
+      type="radio"
+      id="useTransportYes"
+      name="useTransport"
+      value="yes"
+      checked
+    >
+    Yes
+  </label>
+
+  <label>
+    <input
+      type="radio"
+      id="useTransportNo"
+      name="useTransport"
+      value="no"
+    >
+    No
+  </label>
+</p>
+
+
+
+            <!-- From Governorate -->
+            <p class="formRow">
+              <label for="fromGovernorate" class="formLabel">From Governorate</label>
+              <select id="fromGovernorate" name="fromGovernorate" class="formInput" title="Starting governorate">
+                <option value="Cairo">Cairo</option>
+                <option value="Giza">Giza</option>
+                <option value="Alexandria">Alexandria</option>
+                <option value="Port Said">Port Said</option>
+                <option value="Suez">Suez</option>
+                <option value="Ismailia">Ismailia</option>
+                <option value="Sharqia">Sharqia</option>
+                <option value="Dakahlia">Dakahlia</option>
+                <option value="Gharbia">Gharbia</option>
+                <option value="Kafr El Sheikh">Kafr El Sheikh</option>
+                <option value="Beheira">Beheira</option>
+                <option value="Minya">Minya</option>
+                <option value="Assiut">Assiut</option>
+                <option value="Sohag">Sohag</option>
+                <option value="Qena">Qena</option>
+                <option value="Luxor">Luxor</option>
+                <option value="Aswan">Aswan</option>
+              </select>
+            </p>
+
+            <!-- Travel / Transportation (AUTO) -->
+            <p class="formRow">
+              <label for="transportCost" class="formLabel">Travel &amp; Transportation</label>
+              <input
+                id="transportCost"
+                name="transportCost"
+                class="formInput"
+                placeholder="0"
+                title="Transportation cost"
+                readonly
+              >
+            </p>
+
+            <!--  Accommodation package -->
+            <p class="formRow">
+              <label for="foodCost" class="formLabel">Accommodation / Meals Package</label>
+              <select id="foodCost" name="foodCost" class="formInput" title="Accommodation package">
+                <option value="0">None (0$)</option>
+                <option value="2">Standard (2$)</option>
+                <option value="3">Premium (3$)</option>
+                <option value="6">Suite (6$)</option>
+              </select>
+              <small class="paragraphText">
+                Accommodation Total: <strong id="accommodationTotal">0</strong>
+              </small>
+            </p>
+
+            <!-- Grand Total -->
+            <p class="formRow">
+              <label for="grandTotalField" class="formLabel">Total Price</label>
+              <input
+                type="text"
+                id="grandTotalField"
+                class="formInput"
+                value="$0.00"
+                readonly
+                title="Grand total"
+              >
+            </p>
+          </fieldset>
+
+          <fieldset id="guideFieldset" class="fieldsetBox">
+            <legend id="guideLegend" class="legendText">Calculation Guide</legend>
+
+            <ol id="guideSteps" class="numberList">
+              <li>Enter the tickets count, transportation choice, and accommodation package.</li>
+              <li>Press Calculate to show your final total price.</li>
+              <li>Use the grand total to plan your budget.</li>
+            </ol>
+
+            <dl id="guideDefinitions" class="definitionList">
+              <dt>Net Total</dt>
+              <dd>The primary sum of all direct event-related expenses.</dd>
+              <dt>Contingency Buffer</dt>
+              <dd>Recommended extra budget for unexpected needs.</dd>
+              <dt>EduConnect Grant</dt>
+              <dd>Potential university subsidies for approved workshops.</dd>
+            </dl>
+          </fieldset>
+
+          <p id="formActions" class="buttonRow">
+            <button type="submit" id="submitBtn" class="actionBtn" title="Calculate budget">Calculate</button>
+            <button type="reset" id="clearBtn" class="actionBtn" title="Clear fields">Clear</button>
+          </p>
+
+          <!-- Results -->
+          <section id="budgetResults" class="fieldsetBox" aria-live="polite" hidden>
+            <p class="paragraphText">
+              <strong>Total Price: <span id="grandTotal">0</span></strong>
+            </p>
+            <p id="budgetError" class="paragraphText" aria-live="polite"></p>
+          </section>
+        </form>
+      </section>
+    </main>
+    <!-- ========== END MAIN SECTION ========== -->
+
+    <!-- ========== FOOTER SECTION ========== -->
+    <footer id="siteFooter" class="footer">
+      <div id="footerContent" class="footerContent">
+        <section id="footerLinksSection" class="footerSection">
+          <h4 id="footerLinksTitle" class="footerTitle">Links</h4>
+          <ul id="footerLinksList" class="footerList">
+            <li><a href="about.html" id="footerAbout" class="footerLink" title="About EduConnect">About Us</a></li>
+            <li><a href="contact.html" id="footerContact" class="footerLink" title="Contact page">Contact</a></li>
+            <li><a href="privacy.html" id="footerPrivacy" class="footerLink" title="Privacy policy placeholder">Privacy Policy</a></li>
+            <li><a href="terms.html" id="footerTerms" class="footerLink" title="Terms of service placeholder">Terms of Service</a></li>
+          </ul>
+        </section>
+
+        <section id="footerContactSection" class="footerSection">
+          <h4 id="footerContactTitle" class="footerTitle">Contact</h4>
+          <address id="footerAddress" class="address">
+            Email:
+            <a
+              href="mailto:contact@educonnect.example"
+              id="footerEmail"
+              class="footerLink"
+              title="Send us an email"
+            >contact@educonnect.example</a>
+          </address>
+        </section>
+
+        <section id="footerSocialSection" class="footerSection">
+          <h4 id="footerSocialTitle" class="footerTitle">Social</h4>
+          <ul id="footerSocialList" class="footerList">
+            <li>
+              <a
+                href="https://www.linkedin.com"
+                id="footerLinkedIn"
+                class="footerLink"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="LinkedIn"
+              >LinkedIn</a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com"
+                id="footerFacebook"
+                class="footerLink"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Facebook"
+              >Facebook</a>
+            </li>
+            <li>
+              <a
+                href="https://twitter.com"
+                id="footerTwitter"
+                class="footerLink"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Twitter"
+              >Twitter</a>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <section id="footerInfo" class="footerInfo">
+        <p id="copyrightText" class="footerText">&copy; 2025 EduConnect. All rights reserved.</p>
+        <p id="updatedText" class="footerText">
+          Last Updated:
+          <time datetime="2025-12-29" id="lastUpdated" class="timeText" title="Last updated date">
+            December 29, 2025
+          </time>
+        </p>
+      </section>
+    </footer>
+    <!-- ========== END FOOTER ========= -->
+
+    <script src="scripts/common.js"></script>
+    <script src="scripts/budget-calculator.js" defer></script>
+  </body>
+</html>
