@@ -191,7 +191,7 @@ async function initProfileDropdown() {
   try {
     const token = getAuthToken();
     if (token) {
-      const response = await fetch('http://localhost:3000/api/auth/me', {
+      const response = await fetch('https://eventx-0bke.onrender.com/api/auth/me', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -227,7 +227,7 @@ async function initProfileDropdown() {
     if (!token || !profileIcon) return;
     
     try {
-      const response = await fetch('http://localhost:3000/api/auth/me', {
+      const response = await fetch('https://eventx-0bke.onrender.com/api/auth/me', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'

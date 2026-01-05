@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const API_URL = 'http://localhost:3000/api/events';
+  const API_URL = 'https://eventx-0bke.onrender.com/api/events';
   const DISTANCE_TO_CAPITAL_KM = {
     Cairo: 0,
     Giza: 20,

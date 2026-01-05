@@ -9,8 +9,8 @@ window.addEventListener('DOMContentLoaded', function() {
   var resetButton = document.getElementById('resetButton');
   var tableBody = document.getElementById('tableBody');
   
-  const API_URL = 'http://localhost:3000/api/events';
-  const ENROLLMENT_API_URL = 'http://localhost:3000/api/enrollments';
+  const API_URL = 'https://eventx-0bke.onrender.com/api/events';
+  const ENROLLMENT_API_URL = 'https://eventx-0bke.onrender.com/api/enrollments';
   
   var allEvents = [];
   var userEnrollments = [];

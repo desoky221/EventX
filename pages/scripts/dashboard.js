@@ -1,5 +1,5 @@
 // Dashboard Script - Makes student dashboard dynamic
-const API_URL = 'http://localhost:3000/api';
+const API_URL = 'https://eventx-0bke.onrender.com/api';
 const ENROLLMENT_API_URL = `${API_URL}/enrollments`;
 const AUTH_API_URL = `${API_URL}/auth`;
 const EVENT_API_URL = `${API_URL}/events`;

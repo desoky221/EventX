@@ -1,5 +1,5 @@
 // Authentication helper functions
-const API_URL = 'http://localhost:3000/api/auth';
+const API_URL = 'https://eventx-0bke.onrender.com/api/auth';
 
 // Store token in localStorage
 function setAuthToken(token) {
