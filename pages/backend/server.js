@@ -15,7 +15,20 @@ const app = express();
 const PORT = process.env.PORT || 10000;
 
 // CORS middleware - MUST be immediately after app initialization
-app.use(cors()); // This allows your Vercel site to talk to your Render API
+// Configure CORS to allow requests from Vercel and localhost
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    // Allow all origins for now (you can restrict this in production)
+    // Add your Vercel domain here: 'https://your-vercel-app.vercel.app'
+    callback(null, true);
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+})); // This allows your Vercel site to talk to your Render API
 
 // Connect to MongoDB
 connectDB();
@@ -33,6 +46,16 @@ app.use('/api/enrollments', enrollmentRoutes);
 // Health check route
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'Server is running' });
+});
+
+// Test endpoint for debugging
+app.get('/api/test', (req, res) => {
+  res.json({ 
+    status: 'OK', 
+    message: 'API is working',
+    timestamp: new Date().toISOString(),
+    environment: process.env.NODE_ENV || 'development'
+  });
 });
 
 // Serve static files (if needed)

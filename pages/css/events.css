@@ -458,6 +458,147 @@
   }
 }
 
+/* Mobile Phone Responsive Styles (480px and below) */
+@media (max-width: 480px) {
+  .main {
+    padding: 0 1rem 2rem;
+  }
+
+  #filterSection {
+    padding: 1.5rem 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .filter-form {
+    gap: 1rem;
+  }
+
+  .filter-form input[type="text"],
+  .filter-form input[type="date"],
+  .filter-form select {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  #tableCaption {
+    font-size: 1.2rem;
+    padding-left: 0.25rem;
+  }
+
+  .table tr {
+    margin-bottom: 1rem;
+  }
+
+  .table td {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .table td:nth-child(1) {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+
+  .enroll-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  #tableSection {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #tableSection > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .add-event-btn {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  #notesSection {
+    padding: 1.5rem 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .numberList {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .numberList li {
+    padding: 1.5rem;
+  }
+
+  .numberList li::before {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+    top: -12px;
+    left: 15px;
+  }
+
+  .mediaSection {
+    margin: 1.5rem 0;
+  }
+
+  .mediaCaption {
+    font-size: 0.85rem;
+    padding: 0.75rem;
+  }
+
+  /* Modal improvements for mobile */
+  .modal-content {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    max-height: 100vh;
+  }
+
+  .modal-header {
+    padding: 1.25rem 1rem 0.75rem;
+  }
+
+  .modal-header .sectionTitle {
+    font-size: 1.3rem;
+  }
+
+  .add-event-form {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .add-event-form input[type="text"],
+  .add-event-form input[type="date"],
+  .add-event-form input[type="number"],
+  .add-event-form select,
+  .add-event-form textarea {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .modal-buttons {
+    gap: 0.75rem;
+  }
+
+  .modal-buttons .actionBtn {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
 /* ============================================
    ADD EVENT BUTTON
    ============================================ */

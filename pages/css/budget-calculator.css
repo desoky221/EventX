@@ -157,6 +157,10 @@
 }
 
 @media (max-width: 480px) {
+  .main {
+    padding: 0 1rem 2rem;
+  }
+
   .buttonRow {
     flex-direction: column;
     padding: 0 20px 30px;
@@ -168,5 +172,63 @@
     /* Full width buttons */
     padding: 15px;
     /* Touch friendly sizing */
+  }
+
+  /* Fix logo on mobile */
+  .header .brand {
+    gap: 0.5rem;
+  }
+
+  .logoImg {
+    height: 35px !important;
+    width: auto !important;
+    max-width: 35px !important;
+  }
+
+  .titleText {
+    font-size: 1.1rem !important;
+  }
+
+  #costFieldset,
+  #guideFieldset {
+    padding: 20px 15px;
+  }
+
+  .legendText {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .formLabel {
+    font-size: 11px;
+  }
+
+  .formInput {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .formRow {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 360px) {
+  .logoImg {
+    height: 30px !important;
+    max-width: 30px !important;
+  }
+
+  .titleText {
+    font-size: 1rem !important;
+  }
+
+  #costFieldset,
+  #guideFieldset {
+    padding: 15px 10px;
+  }
+
+  .legendText {
+    font-size: 18px;
   }
 }

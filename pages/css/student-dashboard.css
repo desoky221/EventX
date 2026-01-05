@@ -266,39 +266,165 @@
     .pageHeader {
         flex-direction: column;
         text-align: center;
-        padding: 3rem 1.5rem;
-        /* Standardized Header Padding */
-        margin: 0 0 2rem 0;
-        /* Standardized Margin */
-        gap: 20px;
+        padding: 2rem 1rem;
+        margin: 0 0 1.5rem 0;
+        gap: 15px;
         width: 100%;
-        border-radius: 0 0 2rem 2rem;
+        border-radius: 0 0 1.5rem 1.5rem;
+    }
+
+    .pageTitleText {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
     }
 
     .dashboard-grid {
-        margin: 20px 0;
-        padding: 0 15px;
-        /* Standardized Mobile Container Padding */
+        margin: 15px 0;
+        padding: 0 1rem;
+        gap: 20px;
     }
 
     .stats-grid {
         grid-template-columns: 1fr;
         gap: 15px;
+        margin: 1.5rem 0 2rem;
     }
 
     .stat-box {
-        padding: 25px 20px;
-        /* Reduced Card Padding */
+        padding: 1.5rem 1rem;
+    }
+
+    .stat-title {
+        font-size: 0.7rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
     }
 
     .stats-container {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
         width: 100%;
     }
 
     .stat-card {
         width: 100%;
-        /* Full width stats on mobile */
+        padding: 12px 20px;
+    }
+
+    .stat-value {
+        font-size: 20px;
+    }
+
+    .stat-label {
+        font-size: 10px;
+    }
+
+    #enrolled-courses article {
+        flex-direction: column;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    #enrolled-courses figure {
+        width: 100%;
+        height: 180px;
+        border-radius: 15px 15px 0 0;
+    }
+
+    .course-details {
+        padding: 1.25rem;
+    }
+
+    .course-details h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .course-details p {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .continue-btn {
+        width: 100%;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        margin-top: 0.75rem;
+    }
+
+    .sidebar-column {
+        gap: 20px;
+    }
+
+    #recommendedSection,
+    #calendarSection {
+        padding: 1.5rem 1rem;
+    }
+
+    .sidebar-column h3 {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    #recommendedSection a {
+        padding: 12px;
+        font-size: 0.9rem;
+        margin-top: 8px;
+    }
+
+    .calendar-table {
+        border-spacing: 3px;
+    }
+
+    .calendar-table td {
+        padding: 8px 0;
+        font-size: 12px;
+    }
+}
+
+/* Extra Small Mobile Devices (360px and below) */
+@media (max-width: 360px) {
+    .pageHeader {
+        padding: 1.5rem 0.75rem;
+    }
+
+    .pageTitleText {
+        font-size: 1.3rem;
+    }
+
+    .dashboard-grid {
+        padding: 0 0.75rem;
+    }
+
+    .stat-card {
+        padding: 10px 15px;
+    }
+
+    .stat-value {
+        font-size: 18px;
+    }
+
+    .course-details {
+        padding: 1rem;
+    }
+
+    .course-details h3 {
+        font-size: 1rem;
+    }
+
+    .course-details p {
+        font-size: 0.85rem;
+    }
+
+    #recommendedSection,
+    #calendarSection {
+        padding: 1.25rem 0.75rem;
+    }
+
+    .calendar-table td {
+        padding: 6px 0;
+        font-size: 11px;
     }
 }

@@ -357,8 +357,8 @@ window.addEventListener('DOMContentLoaded', function() {
       var currentUser = getCurrentUser();
       
       if (!currentUser) {
-        // Not logged in - show disabled button with login prompt
-        actionCell = '<td><button type="button" class="enroll-btn" disabled title="Please login to enroll">Login to Enroll</button></td>';
+        // Not logged in - show button that redirects to login
+        actionCell = '<td><button type="button" class="enroll-btn login-redirect-btn" title="Please login to enroll">Login to Enroll</button></td>';
       } else if (isAdmin()) {
         // Admin sees nothing (or could add edit/delete later)
         actionCell = '<td></td>';
@@ -385,10 +385,18 @@ window.addEventListener('DOMContentLoaded', function() {
     // Add event listeners to enroll buttons
     var enrollButtons = tableBody.querySelectorAll('.enroll-btn');
     enrollButtons.forEach(btn => {
-      btn.addEventListener('click', function() {
-        var eventId = this.getAttribute('data-event-id');
-        enrollInEvent(eventId);
-      });
+      // Check if this is a login redirect button
+      if (btn.classList.contains('login-redirect-btn')) {
+        btn.addEventListener('click', function() {
+          window.location.href = 'login.html';
+        });
+      } else {
+        // Regular enroll button
+        btn.addEventListener('click', function() {
+          var eventId = this.getAttribute('data-event-id');
+          enrollInEvent(eventId);
+        });
+      }
     });
   }
   

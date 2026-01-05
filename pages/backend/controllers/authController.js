@@ -9,6 +9,28 @@ export const register = async (req, res) => {
   try {
     const { name, email, password, governorate } = req.body;
 
+    // Validate required fields
+    if (!name || !name.trim()) {
+      return res.status(400).json({
+        success: false,
+        message: 'Name is required'
+      });
+    }
+
+    if (!email || !email.trim()) {
+      return res.status(400).json({
+        success: false,
+        message: 'Email is required'
+      });
+    }
+
+    if (!governorate || !governorate.trim()) {
+      return res.status(400).json({
+        success: false,
+        message: 'Governorate is required'
+      });
+    }
+
     // Validate password strength
     if (!password) {
       return res.status(400).json({
@@ -40,8 +62,11 @@ export const register = async (req, res) => {
       });
     }
 
+    // Normalize email to lowercase
+    const normalizedEmail = email.toLowerCase().trim();
+
     // Check if user already exists
-    const existingUser = await User.findOne({ email });
+    const existingUser = await User.findOne({ email: normalizedEmail });
     if (existingUser) {
       return res.status(400).json({
         success: false,
@@ -54,11 +79,11 @@ export const register = async (req, res) => {
 
     // Create user (always student role)
     const user = await User.create({
-      name,
-      email,
+      name: name.trim(),
+      email: normalizedEmail,
       password: hashedPassword,
       role: 'student',
-      governorate
+      governorate: governorate.trim()
     });
 
     // Generate token
@@ -73,18 +98,21 @@ export const register = async (req, res) => {
       message: 'User registered successfully',
       data: {
         user: {
-          id: user._id,
+          id: user._id.toString(),
+          _id: user._id.toString(),
           name: user.name,
           email: user.email,
-          role: user.role
+          role: user.role,
+          governorate: user.governorate
         },
         token
       }
     });
   } catch (error) {
+    console.error('Registration error:', error);
     res.status(400).json({
       success: false,
-      message: 'Error registering user',
+      message: error.message || 'Error registering user',
       error: error.message
     });
   }
@@ -95,8 +123,23 @@ export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // Find user
-    const user = await User.findOne({ email });
+    // Validate required fields
+    if (!email || !email.trim()) {
+      return res.status(400).json({
+        success: false,
+        message: 'Email is required'
+      });
+    }
+
+    if (!password) {
+      return res.status(400).json({
+        success: false,
+        message: 'Password is required'
+      });
+    }
+
+    // Find user (email is already lowercase in the model)
+    const user = await User.findOne({ email: email.toLowerCase().trim() });
     if (!user) {
       return res.status(401).json({
         success: false,
@@ -125,18 +168,21 @@ export const login = async (req, res) => {
       message: 'Login successful',
       data: {
         user: {
-          id: user._id,
+          id: user._id.toString(),
+          _id: user._id.toString(),
           name: user.name,
           email: user.email,
-          role: user.role
+          role: user.role,
+          governorate: user.governorate || null
         },
         token
       }
     });
   } catch (error) {
+    console.error('Login error:', error);
     res.status(500).json({
       success: false,
-      message: 'Error during login',
+      message: error.message || 'Error during login',
       error: error.message
     });
   }
