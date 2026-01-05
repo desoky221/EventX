@@ -9,8 +9,9 @@ window.addEventListener('DOMContentLoaded', function() {
   var resetButton = document.getElementById('resetButton');
   var tableBody = document.getElementById('tableBody');
   
-  const API_URL = 'https://eventx-0bke.onrender.com/api/events';
-  const ENROLLMENT_API_URL = 'https://eventx-0bke.onrender.com/api/enrollments';
+  const API_URL = 'https://eventx-0bke.onrender.com/api';
+  const EVENT_API_URL = `${API_URL}/events`;
+  const ENROLLMENT_API_URL = `${API_URL}/enrollments`;
   
   var allEvents = [];
   var userEnrollments = [];
@@ -109,7 +110,7 @@ window.addEventListener('DOMContentLoaded', function() {
     
     try {
       // First, get event details to get the price
-      const eventResponse = await fetch(`${API_URL}/${eventId}`);
+      const eventResponse = await fetch(`${EVENT_API_URL}/${eventId}`);
       const eventResult = await eventResponse.json();
       
       if (!eventResult.success || !eventResult.data) {
@@ -267,7 +268,7 @@ window.addEventListener('DOMContentLoaded', function() {
       };
       
       try {
-        const response = await fetch(API_URL, {
+        const response = await fetch(EVENT_API_URL, {
           method: 'POST',
           headers: getAuthHeaders(),
           body: JSON.stringify(formData)
@@ -312,7 +313,7 @@ window.addEventListener('DOMContentLoaded', function() {
   // ========== FETCH AND RENDER EVENTS ==========
   async function fetchEvents() {
     try {
-      const response = await fetch(API_URL);
+      const response = await fetch(EVENT_API_URL);
       const result = await response.json();
       
       if (result.success) {

@@ -1,7 +1,8 @@
 (() => {
   "use strict";
 
-  const API_URL = 'https://eventx-0bke.onrender.com/api/events';
+  const API_URL = 'https://eventx-0bke.onrender.com/api';
+  const EVENT_API_URL = `${API_URL}/events`;
   const DISTANCE_TO_CAPITAL_KM = {
     Cairo: 0,
     Giza: 20,
@@ -139,7 +140,7 @@
   // Fetch all available events for "Add More Events"
   async function fetchAllEvents() {
     try {
-      const response = await fetch(API_URL);
+      const response = await fetch(EVENT_API_URL);
       const result = await response.json();
       if (result.success && result.data) {
         allAvailableEvents = result.data;

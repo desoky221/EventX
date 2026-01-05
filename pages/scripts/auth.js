@@ -1,5 +1,5 @@
 // Authentication helper functions
-const API_URL = 'https://eventx-0bke.onrender.com/api/auth';
+const API_URL = 'https://eventx-0bke.onrender.com/api';
 
 // Store token in localStorage
 function setAuthToken(token) {
@@ -128,7 +128,7 @@ if (document.getElementById('loginForm')) {
     messageDiv.style.display = 'none';
     
     try {
-      const response = await fetch(`${API_URL}/login`, {
+      const response = await fetch(`${API_URL}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -276,7 +276,7 @@ if (document.getElementById('registrationForm')) {
     submitBtn.innerHTML = 'Creating account...';
     
     try {
-      const response = await fetch(`${API_URL}/register`, {
+      const response = await fetch(`${API_URL}/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
