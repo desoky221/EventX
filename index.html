@@ -17,6 +17,7 @@
 
   <!-- ========== HEADER SECTION (LEGACY STRUCTURE) ========== -->
   <header id="siteHeader" class="header">
+    <input type="checkbox" id="mobile-nav-toggle" class="mobile-nav-toggle">
     <div id="brandSection" class="brand">
       <a href="index.html" id="homeLink" class="logoLink" title="Go to EventsX Home">
         <img src="pages/images/1png.png" alt="EventsX logo" id="logoImage" class="logoImg">
@@ -24,18 +25,25 @@
       <h1 id="siteTitle" class="titleText">EventsX</h1>
     </div>
 
+    <label for="mobile-nav-toggle" class="mobile-nav-label">
+      <span></span>
+    </label>
+
     <nav id="mainNavigation" class="navBar" aria-label="Primary">
       <ul id="navList" class="navList">
         <li class="navItem"><a href="index.html" id="navHome" class="navLink active" title="Home">Home</a></li>
-        <li class="navItem"><a href="pages/about.html" id="navAbout" class="navLink" title="About EduConnect">About Us</a>
+        <li class="navItem"><a href="pages/about.html" id="navAbout" class="navLink" title="About EduConnect">About
+            Us</a>
         </li>
-        <li class="navItem"><a href="pages/events.html" id="navCourses" class="navLink" title="Browse course catalog">Course
+        <li class="navItem"><a href="pages/events.html" id="navCourses" class="navLink"
+            title="Browse course catalog">Course
             Catalog</a></li>
         <li class="navItem"><a href="pages/student-dashboard.html" id="navDashboard" class="navLink active"
             title="Open student dashboard">Student Dashboard</a></li>
         <li class="navItem"><a href="pages/registration.html" id="navRegister" class="navLink"
             title="Register for an event">Registration</a></li>
-        <li class="navItem"><a href="pages/contact.html" id="navContact" class="navLink" title="Contact us">Contact Me</a>
+        <li class="navItem"><a href="pages/contact.html" id="navContact" class="navLink" title="Contact us">Contact
+            Me</a>
         </li>
         <li class="navItem">
           <a href="https://www.gu.edu.eg/" id="GalalaUniversityLink" class="navLink" target="_blank"
@@ -227,8 +235,8 @@
     </div>
   </footer>
   <!-- ========== END FOOTER ========= -->
-<script src="pages/scripts/common.js"></script>
-<script src="pages/scripts/auth.js"></script>
+  <script src="pages/scripts/common.js"></script>
+  <script src="pages/scripts/auth.js"></script>
 </body>
 
 </html>

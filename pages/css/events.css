@@ -83,7 +83,8 @@
   display: flex;
   gap: 1rem;
   align-items: end;
-  grid-column: 1 / -1; /* Span all columns */
+  grid-column: 1 / -1;
+  /* Span all columns */
 }
 
 /* Button styling for filter form */
@@ -97,7 +98,8 @@
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  flex: 1; /* Make buttons equal width */
+  flex: 1;
+  /* Make buttons equal width */
   min-width: 140px;
 }
 
@@ -136,16 +138,33 @@
 
 /* Responsive filter form */
 @media (max-width: 768px) {
+  .main {
+    width: 100%;
+    padding: 20px 15px;
+  }
+
+  #filterSection {
+    padding: 25px 20px;
+    /* Reduced internal padding for filter section */
+  }
+
   .filter-form {
     grid-template-columns: 1fr;
     gap: 1.25rem;
   }
-  
+
+  .filter-form .form-group input,
+  .filter-form .form-group select {
+    padding: 12px;
+    /* Comfortable touch size */
+  }
+
   .filter-form .button-group {
     flex-direction: column;
     grid-column: 1 / -1;
+    gap: 10px;
   }
-  
+
   #filterForm .actionBtn {
     width: 100%;
   }
@@ -668,6 +687,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -678,6 +698,7 @@
     transform: translateY(-50px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;

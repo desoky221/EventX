@@ -1,9 +1,9 @@
 .hero-section {
-    background-color: #1e3a5f; 
+    background-color: #1e3a5f;
     color: #ffffff;
     padding: 80px 20px;
     text-align: center;
-    border-radius: 0 0 40px 40px; 
+    border-radius: 0 0 40px 40px;
     margin-bottom: 50px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
@@ -26,7 +26,7 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: #4a9b8e; 
+    color: #4a9b8e;
 }
 
 .hero-subtitle {
@@ -49,7 +49,7 @@
 
 .dashboard-grid {
     display: grid;
-    grid-template-columns: 1fr 300px; 
+    grid-template-columns: 1fr 300px;
     gap: 40px;
 }
 
@@ -90,7 +90,7 @@
 }
 
 .card-date {
-    color: #4a9b8e; 
+    color: #4a9b8e;
     font-weight: bold;
     font-size: 14px;
     margin-bottom: 10px;
@@ -129,7 +129,7 @@
 .highlight-media video {
     width: 100%;
     border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -137,7 +137,7 @@
 .sidebar-widget {
     background-color: #ffffff;
     padding: 25px;
-    border-radius: 15px; 
+    border-radius: 15px;
     border: 1px solid var(--color-border-light);
     box-shadow: var(--shadow-sm);
     margin-bottom: 30px;
@@ -148,12 +148,12 @@
     color: var(--color-primary);
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 2px solid #f1f5f9; 
+    border-bottom: 2px solid #f1f5f9;
 }
 
 
 .form-group {
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 
 .form-group label {
@@ -162,7 +162,7 @@
     font-weight: 600;
     color: var(--color-text-secondary);
     margin-bottom: 8px;
-    text-transform: capitalize; 
+    text-transform: capitalize;
 }
 
 
@@ -171,7 +171,7 @@
     width: 100%;
     padding: 12px 15px;
     font-size: 15px;
-    border: 1px solid #d1d5db; 
+    border: 1px solid #d1d5db;
     border-radius: var(--radius-md);
     background-color: #ffffff;
     color: var(--color-text-primary);
@@ -189,7 +189,7 @@
 .form-group select:focus {
     outline: none;
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1); 
+    box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
 }
 
 /* Modern Search Button */
@@ -241,17 +241,88 @@
 
 @media (max-width: 992px) {
     .dashboard-grid {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
     }
 
     .feature-highlight {
         flex-direction: column;
         text-align: center;
     }
+
+    .highlight-content {
+        order: 2;
+        /* Put text below video on tablet/mobile */
+    }
 }
 
 @media (max-width: 768px) {
+
+    /* --- Hero Section --- */
+    .hero-section {
+        padding: 40px 15px;
+        border-radius: 0 0 20px 20px;
+    }
+
     .hero-title {
-        font-size: 32px;
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        gap: 10px;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+
+    /* --- Main Content & Grid --- */
+    .main-wrapper {
+        padding: 0 15px 40px;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+        /* Force single column on smaller screens */
+        gap: 20px;
+    }
+
+    .event-card {
+        max-width: 400px;
+        margin: 0 auto;
+        /* Center cards if needed */
+        width: 100%;
+    }
+
+    /* feature highlight tweaks */
+    .feature-highlight {
+        padding: 25px;
+        margin-top: 30px;
+        gap: 20px;
+    }
+
+    .highlight-content h3 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-media {
+        height: 160px;
+    }
+
+    .sidebar-widget {
+        padding: 20px;
     }
 }

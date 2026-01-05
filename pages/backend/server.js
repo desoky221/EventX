@@ -14,11 +14,13 @@ const __dirname = dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 10000;
 
+// CORS middleware - MUST be immediately after app initialization
+app.use(cors()); // This allows your Vercel site to talk to your Render API
+
 // Connect to MongoDB
 connectDB();
 
 // Middleware
-app.use(cors()); // This allows your Vercel site to talk to your Render API
 app.use(express.json({ limit: '10mb' })); // Parse JSON bodies (increased limit for base64 images)
 app.use(express.urlencoded({ extended: true, limit: '10mb' })); // Parse URL-encoded bodies
 app.use(cookieParser()); // Parse cookies

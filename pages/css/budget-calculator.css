@@ -7,7 +7,7 @@
 
 .formBox {
   display: grid;
-  grid-template-columns: 1.5fr 1fr; 
+  grid-template-columns: 1.5fr 1fr;
   background-color: #ffffff;
   border-radius: 25px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -44,7 +44,7 @@
 .formInput {
   width: 100%;
   padding: 12px 15px;
-  background-color: #f1f5f9; 
+  background-color: #f1f5f9;
   border: 1px solid transparent;
   border-radius: 12px;
   font-size: 16px;
@@ -53,7 +53,7 @@
 
 
 #guideFieldset {
-  background-color: #f0f7f9; 
+  background-color: #f0f7f9;
   padding: 40px 30px;
   border: none;
   border-left: 1px solid #e2e8f0;
@@ -136,7 +136,37 @@
 }
 
 @media (max-width: 800px) {
+  .main {
+    width: 100%;
+    padding: 0 15px 30px;
+    /* Standard page padding */
+  }
+
   .formBox {
     grid-template-columns: 1fr;
+    border-radius: 15px;
+  }
+
+  #costFieldset,
+  #guideFieldset {
+    padding: 30px 20px;
+    /* Standardized Card Padding */
+    border-left: none;
+    border-bottom: 1px solid #e2e8f0;
+  }
+}
+
+@media (max-width: 480px) {
+  .buttonRow {
+    flex-direction: column;
+    padding: 0 20px 30px;
+    gap: 15px;
+  }
+
+  .actionBtn {
+    width: 100%;
+    /* Full width buttons */
+    padding: 15px;
+    /* Touch friendly sizing */
   }
 }

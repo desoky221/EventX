@@ -15,12 +15,17 @@
 <body id="eventsPage">
   <!-- ========== HEADER SECTION ========== -->
   <header id="siteHeader" class="header">
+    <input type="checkbox" id="mobile-nav-toggle" class="mobile-nav-toggle">
     <div id="brandSection" class="brand">
       <a href="../index.html" id="homeLink" class="logoLink" title="Go to EventsX Home">
         <img src="images/1png.png" alt="EventsX logo" id="logoImage" class="logoImg">
       </a>
       <h1 id="siteTitle" class="titleText">EventsX</h1>
     </div>
+
+    <label for="mobile-nav-toggle" class="mobile-nav-label">
+      <span></span>
+    </label>
 
     <!-- ========== MAIN NAVIGATION ========== -->
     <nav id="mainNavigation" class="navBar" aria-label="Primary">
@@ -107,7 +112,8 @@
     <section id="tableSection" class="contentSection">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
         <h3 id="tableTitle" class="sectionTitle" style="margin: 0;">Event Schedule</h3>
-        <button type="button" id="addEventButton" class="actionBtn add-event-btn" style="display: none;">+ Add Event</button>
+        <button type="button" id="addEventButton" class="actionBtn add-event-btn" style="display: none;">+ Add
+          Event</button>
       </div>
 
       <table id="eventsTable" class="table">
@@ -220,7 +226,8 @@
         </div>
         <div class="form-group">
           <label for="eventDescriptionInput">Description *</label>
-          <textarea id="eventDescriptionInput" name="description" rows="3" required placeholder="Event description"></textarea>
+          <textarea id="eventDescriptionInput" name="description" rows="3" required
+            placeholder="Event description"></textarea>
         </div>
         <div class="form-group">
           <label for="eventDateInput">Date *</label>

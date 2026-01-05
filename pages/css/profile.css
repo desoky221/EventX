@@ -308,16 +308,43 @@ Description:  Profile page specific styles.
   .profile-wrapper {
     flex-direction: column;
     margin: 1rem;
+    min-height: auto;
   }
 
   .visual-container {
-    min-height: 300px;
+    min-height: 250px;
     order: -1;
+    padding: 2rem;
+  }
+
+  .floating-card {
+    position: relative;
+    transform: none;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+  }
+
+  .blob-shape {
+    width: 300px;
+    height: 300px;
+  }
+
+  .card-1,
+  .card-2 {
+    display: none;
+  }
+
+  .visual-container::after {
+    content: 'Your Profile';
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    z-index: 10;
   }
 
   .profile-container-section {
-    padding: 2rem;
+    padding: 2rem 1.5rem;
     max-height: none;
   }
 }
-

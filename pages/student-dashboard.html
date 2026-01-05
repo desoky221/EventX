@@ -25,6 +25,7 @@ my github: https://github.com/desoky221/EDUconnect
     <!-- ========== HEADER SECTION ========== -->
     <!-- ========== HEADER SECTION ========== -->
     <header id="siteHeader" class="header">
+        <input type="checkbox" id="mobile-nav-toggle" class="mobile-nav-toggle">
         <div id="brandSection" class="brand">
             <a href="../index.html" id="homeLink" class="logoLink" title="Go to EventsX Home">
                 <img src="images/1png.png" alt="EventsX logo" id="logoImage" class="logoImg">
@@ -32,34 +33,41 @@ my github: https://github.com/desoky221/EDUconnect
             <h1 id="siteTitle" class="titleText">EventsX</h1>
         </div>
 
+        <label for="mobile-nav-toggle" class="mobile-nav-label">
+            <span></span>
+        </label>
+
         <nav id="mainNavigation" class="navBar" aria-label="Primary">
             <ul id="navList" class="navList">
-              <li class="navItem"><a href="../index.html" id="navHome" class="navLink" title="Home">Home</a></li>
-              <li class="navItem"><a href="about.html" id="navAbout" class="navLink" title="About EduConnect">About Us</a>
-              </li>
-              <li class="navItem"><a href="events.html" id="navCourses" class="navLink" title="Browse course catalog">Course
-                  Catalog</a></li>
-              <li class="navItem"><a href="student-dashboard.html" id="navDashboard" class="navLink"
-                  title="Open student dashboard">Student Dashboard</a></li>
-              <li class="navItem"><a href="registration.html" id="navRegister" class="navLink"
-                  title="Register for an event">Registration</a></li>
-              <li class="navItem"><a href="contact.html" id="navContact" class="navLink" title="Contact us">Contact Me</a>
-              </li>
-              <li class="navItem">
-                <a href="https://www.gu.edu.eg/" id="GalalaUniversityLink" class="navLink" target="_blank"
-                  rel="noopener noreferrer" title="Visit University Website">Galala University</a>
-              </li>
+                <li class="navItem"><a href="../index.html" id="navHome" class="navLink" title="Home">Home</a></li>
+                <li class="navItem"><a href="about.html" id="navAbout" class="navLink" title="About EduConnect">About
+                        Us</a>
+                </li>
+                <li class="navItem"><a href="events.html" id="navCourses" class="navLink"
+                        title="Browse course catalog">Course
+                        Catalog</a></li>
+                <li class="navItem"><a href="student-dashboard.html" id="navDashboard" class="navLink"
+                        title="Open student dashboard">Student Dashboard</a></li>
+                <li class="navItem"><a href="registration.html" id="navRegister" class="navLink"
+                        title="Register for an event">Registration</a></li>
+                <li class="navItem"><a href="contact.html" id="navContact" class="navLink" title="Contact us">Contact
+                        Me</a>
+                </li>
+                <li class="navItem">
+                    <a href="https://www.gu.edu.eg/" id="GalalaUniversityLink" class="navLink" target="_blank"
+                        rel="noopener noreferrer" title="Visit University Website">Galala University</a>
+                </li>
             </ul>
             <!-- Profile Dropdown -->
             <div id="profileContainer" class="profile-container" data-hidden="true">
-              <div class="profile-icon" title="Profile Menu"></div>
-              <div class="profile-dropdown">
-                <button type="button" class="profile-dropdown-item" data-action="switch">Sign Out</button>
-                <div class="profile-dropdown-divider"></div>
-                <button type="button" class="profile-dropdown-item" data-action="profile">Profile</button>
-              </div>
+                <div class="profile-icon" title="Profile Menu"></div>
+                <div class="profile-dropdown">
+                    <button type="button" class="profile-dropdown-item" data-action="switch">Sign Out</button>
+                    <div class="profile-dropdown-divider"></div>
+                    <button type="button" class="profile-dropdown-item" data-action="profile">Profile</button>
+                </div>
             </div>
-          </nav>
+        </nav>
     </header>
     <!-- ========== END HEADER ========= -->
 
@@ -74,113 +82,159 @@ my github: https://github.com/desoky221/EDUconnect
     <!-- ========== MAIN SECTION ========== -->
     <main id="mainContent" class="main">
 
-    <header id="pageHeader" class="pageHeader">
-        <h2 id="pageTitle" class="pageTitleText">Welcome back, Student</h2>
+        <header id="pageHeader" class="pageHeader">
+            <h2 id="pageTitle" class="pageTitleText">Welcome back, Student</h2>
 
-        <div id="quickStats" class="stats-container">
-            <div class="stat-card glass-panel">
-                <span class="stat-label">Total Events</span>
-                <span class="stat-value">4</span>
-            </div>
-            <div class="stat-card glass-panel">
-                <span class="stat-label">Completed</span>
-                <span class="stat-value">1</span>
-            </div>
-            <div class="stat-card glass-panel">
-                <span class="stat-label">In Progress</span>
-                <span class="stat-value">3</span>
-            </div>
-        </div>
-    </header>
-
-    <div class="dashboard-grid">
-
-        <div class="main-column">
-
-            <section id="enrolled-courses">
-                <h2>Events Attended</h2>
-
-                <article class="course-card">
-                    <figure>
-                        <img src="images/study1.jpeg" alt="Web Development Thumbnail" width="150">
-                    </figure>
-                    <div class="course-details">
-                        <h3>Web Development Fundamentals</h3>
-                        <p><strong>Instructor:</strong> Dr. Samy Ghoniemy</p>
-                        <p>Progress: 45% Completed</p>
-                        <p>Last Accessed: <time datetime="2025-11-27">November 27, 2025</time></p>
-                        <button type="button" class="continue-btn" onclick="window.location.href='events.html'">Continue Learning</button>
-                    </div>
-                </article>
-
-                <article class="course-card">
-                    <figure>
-                        <img src="images/study2.jpg" alt="Data Science Thumbnail" width="150">
-                    </figure>
-                    <div class="course-details">
-                        <h3>Python for Data Science</h3>
-                        <p><strong>Instructor:</strong> Dr. Shakir</p>
-                        <p>Progress: 12% Completed</p>
-                        <p>Last Accessed: <time datetime="2025-11-20">November 20, 2025</time></p>
-                        <button type="button" class="continue-btn" onclick="window.location.href='events.html'">Continue Learning</button>
-                    </div>
-                </article>
-            </section>
-
-        <section id="progress-statistics">
-            <h2>Event Participation Statistics</h2>
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <span class="stat-title">Events Attended</span>
-                    <span class="stat-number">0</span>
+            <div id="quickStats" class="stats-container">
+                <div class="stat-card glass-panel">
+                    <span class="stat-label">Total Events</span>
+                    <span class="stat-value">4</span>
                 </div>
-                
-             
-                
-                <div class="stat-box">
-                    <span class="stat-title">Workshops Done</span>
-                    <span class="stat-number">0</span>
+                <div class="stat-card glass-panel">
+                    <span class="stat-label">Completed</span>
+                    <span class="stat-value">1</span>
                 </div>
-                
-               
+                <div class="stat-card glass-panel">
+                    <span class="stat-label">In Progress</span>
+                    <span class="stat-value">3</span>
+                </div>
             </div>
-        </section>
+        </header>
+
+        <div class="dashboard-grid">
+
+            <div class="main-column">
+
+                <section id="enrolled-courses">
+                    <h2>Events Attended</h2>
+
+                    <article class="course-card">
+                        <figure>
+                            <img src="images/study1.jpeg" alt="Web Development Thumbnail" width="150">
+                        </figure>
+                        <div class="course-details">
+                            <h3>Web Development Fundamentals</h3>
+                            <p><strong>Instructor:</strong> Dr. Samy Ghoniemy</p>
+                            <p>Progress: 45% Completed</p>
+                            <p>Last Accessed: <time datetime="2025-11-27">November 27, 2025</time></p>
+                            <button type="button" class="continue-btn"
+                                onclick="window.location.href='events.html'">Continue Learning</button>
+                        </div>
+                    </article>
+
+                    <article class="course-card">
+                        <figure>
+                            <img src="images/study2.jpg" alt="Data Science Thumbnail" width="150">
+                        </figure>
+                        <div class="course-details">
+                            <h3>Python for Data Science</h3>
+                            <p><strong>Instructor:</strong> Dr. Shakir</p>
+                            <p>Progress: 12% Completed</p>
+                            <p>Last Accessed: <time datetime="2025-11-20">November 20, 2025</time></p>
+                            <button type="button" class="continue-btn"
+                                onclick="window.location.href='events.html'">Continue Learning</button>
+                        </div>
+                    </article>
+                </section>
+
+                <section id="progress-statistics">
+                    <h2>Event Participation Statistics</h2>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <span class="stat-title">Events Attended</span>
+                            <span class="stat-number">0</span>
+                        </div>
+
+
+
+                        <div class="stat-box">
+                            <span class="stat-title">Workshops Done</span>
+                            <span class="stat-number">0</span>
+                        </div>
+
+
+                    </div>
+                </section>
+            </div>
+
+            <aside id="dashboardSidebar" class="sidebar-column">
+
+                <section id="recommendedSection">
+                    <h3>Recommended for You</h3>
+                    <ul>
+                        <li><a href="events.html" title="Advanced JavaScript">Advanced JavaScript</a></li>
+                        <li><a href="events.html" title="React Native">React Native</a></li>
+                    </ul>
+                </section>
+
+                <section id="calendarSection">
+                    <h3>Calendar</h3>
+                    <table id="dashboardCalendar" class="calendar-table">
+                        <caption>November 2025</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Su</th>
+                                <th scope="col">Mo</th>
+                                <th scope="col">Tu</th>
+                                <th scope="col">We</th>
+                                <th scope="col">Th</th>
+                                <th scope="col">Fr</th>
+                                <th scope="col">Sa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>7</td>
+                                <td>8</td>
+                                <td>9</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>12</td>
+                                <td>13</td>
+                                <td>14</td>
+                                <td>15</td>
+                                <td>16</td>
+                                <td>17</td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td>19</td>
+                                <td>20</td>
+                                <td>21</td>
+                                <td>22</td>
+                                <td>23</td>
+                                <td>24</td>
+                            </tr>
+                            <tr>
+                                <td>25</td>
+                                <td>26</td>
+                                <td>27</td>
+                                <td>28</td>
+                                <td>29</td>
+                                <td>30</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+            </aside>
         </div>
-
-        <aside id="dashboardSidebar" class="sidebar-column">
-            
-            <section id="recommendedSection">
-                <h3>Recommended for You</h3>
-                <ul>
-                    <li><a href="events.html" title="Advanced JavaScript">Advanced JavaScript</a></li>
-                    <li><a href="events.html" title="React Native">React Native</a></li>
-                </ul>
-            </section>
-
-            <section id="calendarSection">
-                <h3>Calendar</h3>
-                <table id="dashboardCalendar" class="calendar-table">
-                    <caption>November 2025</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">Su</th><th scope="col">Mo</th><th scope="col">Tu</th>
-                            <th scope="col">We</th><th scope="col">Th</th><th scope="col">Fr</th>
-                            <th scope="col">Sa</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td></tr>
-                        <tr><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
-                        <tr><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr>
-                        <tr><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr>
-                        <tr><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td></td></tr>
-                    </tbody>
-                </table>
-            </section>
-
-        </aside>
-    </div>
-</main>
+    </main>
     <!-- ========== END MAIN SECTION ========== -->
     <!-- ========== FOOTER SECTION ========== -->
     <footer id="siteFooter" class="footer">

@@ -372,14 +372,67 @@ Description:  Registration page specific styles.
   .registration-wrapper {
     flex-direction: column;
     margin: 1rem;
+    height: auto;
+    min-height: auto;
+  }
+
+  .blob-shape {
+    width: 300px;
+    height: 300px;
   }
 
   .visual-container {
-    min-height: 300px;
+    min-height: 250px;
     order: -1;
+    padding: 2rem;
+  }
+
+  .floating-card {
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+  }
+
+  .card-1,
+  .card-2 {
+    transform: none;
+    margin: 0 auto;
+    display: none;
+    /* Simplify visual on mobile to avoid clutter */
+  }
+
+  /* Show just one nice card or image on mobile if needed, or keep simple */
+  .visual-container::after {
+    content: 'Join Us!';
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    z-index: 10;
   }
 
   .form-container {
-    padding: 2rem;
+    padding: 25px 20px;
+    /* Standardized Mobile Padding */
+  }
+
+  .form-content h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .registration-wrapper {
+    margin: 0.5rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .social-icons {
+    gap: 0.5rem;
   }
 }

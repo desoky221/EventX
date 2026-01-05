@@ -15,6 +15,7 @@
 <body id="loginPage">
   <!-- ========== HEADER SECTION ========== -->
   <header id="siteHeader" class="header">
+    <input type="checkbox" id="mobile-nav-toggle" class="mobile-nav-toggle">
     <div id="brandSection" class="brand">
       <a href="../index.html" id="homeLink" class="logoLink" title="Go to EventsX Home">
         <img src="images/1png.png" alt="EventsX logo" id="logoImage" class="logoImg">
@@ -22,17 +23,27 @@
       <h1 id="siteTitle" class="titleText">EventsX</h1>
     </div>
 
+    <label for="mobile-nav-toggle" class="mobile-nav-label">
+      <span></span>
+    </label>
+
     <!-- ========== MAIN NAVIGATION ========== -->
     <nav id="mainNavigation" class="navBar" aria-label="Primary">
       <ul id="navList" class="navList">
         <li class="navItem"><a href="../index.html" id="navHome" class="navLink" title="Home">Home</a></li>
-        <li class="navItem"><a href="about.html" id="navAbout" class="navLink" title="About EduConnect">About Us</a></li>
-        <li class="navItem"><a href="events.html" id="navCourses" class="navLink" title="Browse course catalog">Course Catalog</a></li>
-        <li class="navItem"><a href="student-dashboard.html" id="navDashboard" class="navLink" title="Open student dashboard">Student Dashboard</a></li>
-        <li class="navItem"><a href="registration.html" id="navRegister" class="navLink" title="Register for an event">Registration</a></li>
-        <li class="navItem"><a href="contact.html" id="navContact" class="navLink" title="Contact us">Contact Me</a></li>
+        <li class="navItem"><a href="about.html" id="navAbout" class="navLink" title="About EduConnect">About Us</a>
+        </li>
+        <li class="navItem"><a href="events.html" id="navCourses" class="navLink" title="Browse course catalog">Course
+            Catalog</a></li>
+        <li class="navItem"><a href="student-dashboard.html" id="navDashboard" class="navLink"
+            title="Open student dashboard">Student Dashboard</a></li>
+        <li class="navItem"><a href="registration.html" id="navRegister" class="navLink"
+            title="Register for an event">Registration</a></li>
+        <li class="navItem"><a href="contact.html" id="navContact" class="navLink" title="Contact us">Contact Me</a>
+        </li>
         <li class="navItem">
-          <a href="https://www.gu.edu.eg/" id="GalalaUniversityLink" class="navLink" target="_blank" rel="noopener noreferrer" title="Visit University Website">Galala University</a>
+          <a href="https://www.gu.edu.eg/" id="GalalaUniversityLink" class="navLink" target="_blank"
+            rel="noopener noreferrer" title="Visit University Website">Galala University</a>
         </li>
       </ul>
       <!-- Profile Dropdown -->
@@ -73,7 +84,8 @@
             <div class="input-group">
               <span class="icon">🔒</span>
               <input type="password" id="loginPassword" name="password" placeholder="Password" required>
-              <button type="button" class="password-toggle" id="loginPasswordToggle" aria-label="Toggle password visibility">
+              <button type="button" class="password-toggle" id="loginPasswordToggle"
+                aria-label="Toggle password visibility">
                 <span class="eye-icon">👁️</span>
               </button>
             </div>
@@ -108,8 +120,10 @@
         <ul id="footerLinksList" class="footerList">
           <li><a href="about.html" id="footerAbout" class="footerLink" title="About EduConnect">About Us</a></li>
           <li><a href="contact.html" id="footerContact" class="footerLink" title="Contact page">Contact</a></li>
-          <li><a href="privacy.html" id="footerPrivacy" class="footerLink" title="Privacy policy placeholder">Privacy Policy</a></li>
-          <li><a href="terms.html" id="footerTerms" class="footerLink" title="Terms of service placeholder">Terms of Service</a></li>
+          <li><a href="privacy.html" id="footerPrivacy" class="footerLink" title="Privacy policy placeholder">Privacy
+              Policy</a></li>
+          <li><a href="terms.html" id="footerTerms" class="footerLink" title="Terms of service placeholder">Terms of
+              Service</a></li>
         </ul>
       </section>
 
@@ -117,7 +131,8 @@
         <h2 id="footerContactTitle" class="footerTitle">Contact</h2>
         <address id="footerAddress" class="address">
           Email:
-          <a href="mailto:contact@educonnect.example" id="footerEmail" class="footerLink" title="Send us an email">contact@educonnect.example</a>
+          <a href="mailto:contact@educonnect.example" id="footerEmail" class="footerLink"
+            title="Send us an email">contact@educonnect.example</a>
         </address>
       </section>
 
@@ -125,13 +140,16 @@
         <h2 id="footerSocialTitle" class="footerTitle">Social</h2>
         <ul id="footerSocialList" class="footerList">
           <li>
-            <a href="https://www.linkedin.com" id="footerLinkedIn" class="footerLink" target="_blank" rel="noopener noreferrer" title="LinkedIn">LinkedIn</a>
+            <a href="https://www.linkedin.com" id="footerLinkedIn" class="footerLink" target="_blank"
+              rel="noopener noreferrer" title="LinkedIn">LinkedIn</a>
           </li>
           <li>
-            <a href="https://www.facebook.com" id="footerFacebook" class="footerLink" target="_blank" rel="noopener noreferrer" title="Facebook">Facebook</a>
+            <a href="https://www.facebook.com" id="footerFacebook" class="footerLink" target="_blank"
+              rel="noopener noreferrer" title="Facebook">Facebook</a>
           </li>
           <li>
-            <a href="https://twitter.com" id="footerTwitter" class="footerLink" target="_blank" rel="noopener noreferrer" title="Twitter">Twitter</a>
+            <a href="https://twitter.com" id="footerTwitter" class="footerLink" target="_blank"
+              rel="noopener noreferrer" title="Twitter">Twitter</a>
           </li>
         </ul>
       </section>
@@ -151,4 +169,3 @@
 </body>
 
 </html>
-
