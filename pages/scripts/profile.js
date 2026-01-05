@@ -1,5 +1,8 @@
 // Profile Script - Handles profile editing and updates
-const API_URL = 'https://eventx-0bke.onrender.com/api';
+// Declare API_URL only if it doesn't already exist (to avoid redeclaration errors)
+if (typeof API_URL === 'undefined') {
+  var API_URL = 'https://eventx-0bke.onrender.com/api';
+}
 const AUTH_API_URL = `${API_URL}/auth`;
 
 // Get auth token

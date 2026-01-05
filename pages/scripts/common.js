@@ -1,7 +1,10 @@
 // File: scripts/common.js
 // Shared JavaScript utilities used across all pages
 
-const API_URL = 'https://eventx-0bke.onrender.com/api';
+// Declare API_URL only if it doesn't already exist (to avoid redeclaration errors)
+if (typeof API_URL === 'undefined') {
+  var API_URL = 'https://eventx-0bke.onrender.com/api';
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   updateCopyrightYear();
